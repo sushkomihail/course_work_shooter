@@ -1,12 +1,14 @@
 using InputSystem;
 using UnityEngine;
+using WeaponSystem;
 
 namespace Player
 {
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private PlayerInputSystem _input;
-        [SerializeField] private Camera _camera;
+        [SerializeField] private WeaponController _weaponController;
+        [SerializeField] private Transform _cameraTransform;
 
         private float _xLookAngle;
         private float _yLookAngle;
@@ -22,7 +24,7 @@ namespace Player
 
         private void Look()
         {
-            Vector2 lookVector = _input.Controls.Movement.Look.ReadValue<Vector2>();
+            Vector2 lookVector = _input.Controls.Player.Look.ReadValue<Vector2>();
             
             _xLookAngle -= lookVector.y * _xSensitivity * Time.deltaTime;
             _xLookAngle = Mathf.Clamp(_xLookAngle, MinVerticalLookAngle, MaxVerticalLookAngle);
@@ -31,7 +33,7 @@ namespace Player
             _yLookAngle = Mathf.Repeat(_yLookAngle, 360);
             
             transform.rotation = Quaternion.Euler(0, _yLookAngle, 0);
-            _camera.transform.localRotation = Quaternion.Euler(_xLookAngle, 0, 0);
+            _cameraTransform.localRotation = Quaternion.Euler(_xLookAngle, 0, 0);
         }
     }
 }

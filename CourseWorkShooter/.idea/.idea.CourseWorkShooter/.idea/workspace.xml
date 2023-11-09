@@ -20,13 +20,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="964bf02c-bc4c-47dd-b461-5432e5d36519" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/InputSystem/PlayerInputSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/InputSystem/PlayerInputSystem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Health.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Health/Health.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Health/Health.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/AssaultRifle.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/AssaultRifle.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Attack.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Attack.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Weapon.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Weapon.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponWheelConfig.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponWheelConfig.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponWheelItem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponWheelItem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CourseWorkShooter/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CourseWorkShooter/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CourseWorkShooter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CourseWorkShooter/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/W1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/W1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/W2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/W2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/W2.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/W2.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/W3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/W3.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/W4.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/W4.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputSystem/PlayerControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputSystem/PlayerControls.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputSystem/PlayerControls.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputSystem/PlayerControls.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputSystem/PlayerInputSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputSystem/PlayerInputSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,12 +54,24 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponController.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/InputSystem/PlayerInputSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/InputSystem/InputSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Attack.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Health/Health.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/RaycastAttack.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/AssaultRifle.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponsWheelConfig.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponWheelConfig.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/InputSystem/PlayerInputSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponWheelItem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Weapon.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponController.cs" />
       </list>
     </option>
   </component>
@@ -86,7 +116,9 @@
       <option name="presentableId" value="Default" />
       <updated>1699181812209</updated>
       <workItem from="1699181820524" duration="820000" />
-      <workItem from="1699344910526" duration="2206000" />
+      <workItem from="1699344910526" duration="9502000" />
+      <workItem from="1699443151170" duration="7565000" />
+      <workItem from="1699541356764" duration="2440000" />
     </task>
     <servers />
   </component>

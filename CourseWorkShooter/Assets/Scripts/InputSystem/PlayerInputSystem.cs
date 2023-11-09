@@ -4,12 +4,12 @@
     {
         protected override void OnEnable()
         {
-            Controls.Movement.Enable();
+            Controls.Player.Enable();
         }
 
         protected override void OnDisable()
         {
-            Controls.Movement.Disable();
+            Controls.Player.Disable();
         }
     }
 }

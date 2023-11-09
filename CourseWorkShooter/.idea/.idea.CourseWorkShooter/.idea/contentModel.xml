@@ -4,12 +4,16 @@
     <e p="C:\Unity Projects\course_work_shooter\CourseWorkShooter" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Configs" t="Include" />
         <e p="Materials" t="Include">
           <e p="WeaponMaterials" t="Include" />
         </e>
         <e p="Prefabs" t="Include" />
         <e p="Scenes" t="Include" />
         <e p="Scripts" t="Include">
+          <e p="Health" t="Include">
+            <e p="Health.cs" t="Include" />
+          </e>
           <e p="InputSystem" t="Include">
             <e p="InputSystem.cs" t="Include" />
             <e p="PlayerControls.cs" t="Include" />
@@ -18,7 +22,15 @@
           <e p="Player" t="Include">
             <e p="PlayerController.cs" t="Include" />
           </e>
-          <e p="WeaponSystem" t="Include" />
+          <e p="WeaponSystem" t="Include">
+            <e p="AssaultRifle.cs" t="Include" />
+            <e p="Attack.cs" t="Include" />
+            <e p="RaycastAttack.cs" t="Include" />
+            <e p="Weapon.cs" t="Include" />
+            <e p="WeaponController.cs" t="Include" />
+            <e p="WeaponWheelConfig.cs" t="Include" />
+            <e p="WeaponWheelItem.cs" t="Include" />
+          </e>
         </e>
       </e>
       <e p="CourseWorkShooter.sln" t="IncludeFlat" />
