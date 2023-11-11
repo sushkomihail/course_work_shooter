@@ -1,21 +1,25 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 namespace WeaponSystem
 {
-    public class Weapon : MonoBehaviour
+    public abstract class Weapon : MonoBehaviour
     {
-        [SerializeField] private Vector3 _positionInHolder;
-        [SerializeField] private Transform _startAttackPoint;
-        [SerializeField] private float _attackDistance;
-        [SerializeField] private Vector2 _spreadRange;
-        [SerializeField] private LayerMask _attackMask;
-        [SerializeField] private int _damage;
+        [SerializeField] protected Transform _muzzle;
+        [SerializeField] protected Vector2 _spreadRange;
+        [SerializeField] protected LayerMask _attackMask;
+        [SerializeField] protected int _damage;
 
-        public Vector3 PositionInHolder => _positionInHolder;
+        public bool CanAttack => _canAttack;
 
         protected Camera _camera;
-        protected Attack _attack;
-        
-        
+        protected bool _canAttack = true;
+
+        public void SetCamera(Camera camera)
+        {
+            _camera = camera;
+        }
+
+        public abstract IEnumerator PerformAttack();
     }
 }

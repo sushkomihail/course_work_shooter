@@ -6,6 +6,8 @@ namespace WeaponSystem
     {
         protected LayerMask _attackMask;
         protected readonly int _damage;
+
+        private const int RayDistanceWithoutHit = 200;
         
         protected Attack(LayerMask attackMask, int damage)
         {
@@ -13,17 +15,17 @@ namespace WeaponSystem
             _damage = damage;
         }
         
-        protected Vector3 CameraRayHitPosition(Camera camera, float attackDistance, Vector3 spreadRange)
+        protected Vector3 CameraRayHitPosition(Camera camera, Vector3 spreadRange)
         {
             Vector3 rayDirection = camera.transform.forward + CalculateSpread(spreadRange);
             Ray ray = new Ray(camera.transform.position, rayDirection);
             
-            if (Physics.Raycast(ray, out RaycastHit hit, attackDistance))
+            if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity))
             {
                 return hit.point;
             }
             
-            return camera.transform.position + rayDirection * attackDistance;
+            return camera.transform.position + rayDirection * RayDistanceWithoutHit;
         }
         
         private Vector3 CalculateSpread(Vector2 spreadRange)

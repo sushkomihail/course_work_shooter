@@ -1,11 +1,9 @@
-using InputSystem;
 using UnityEngine;
 
 namespace WeaponSystem
 {
     public class WeaponController : MonoBehaviour
     {
-        [SerializeField] private PlayerInputSystem _input;
         [SerializeField] private Camera _camera;
         [SerializeField] private Transform _weaponHolder;
         [SerializeField] private WeaponWheelConfig _weaponWheelConfig;
@@ -22,37 +20,12 @@ namespace WeaponSystem
             InstantiateWeapons();
         }
 
-        private void Start()
-        {
-            _input.Controls.Player.ChangeWeapon.performed += context =>
-            {
-                SetWeaponId(context.ReadValue<float>());
-                ChangeWeapon();
-            };
-        }
-
         private void Update()
         {
             
         }
-
-        private void InstantiateWeapons()
-        {
-            foreach (WeaponWheelItem item in _weaponWheelConfig.Items)
-            {
-                Weapon weapon = Instantiate(item.Weapon, _weaponHolder);
-                weapon.transform.localPosition = item.Weapon.PositionInHolder;
-                weapon.transform.localRotation = Quaternion.identity;
-                
-                _weapons[item.Id] = weapon;
-                weapon.gameObject.SetActive(false);
-            }
-
-            _currentWeapon = _weapons[0];
-            _currentWeapon.gameObject.SetActive(true);
-        }
-
-        private void SetWeaponId(float mouseScroll)
+        
+        public void SetWeaponId(float mouseScroll)
         {
             if (mouseScroll > 0) _weaponId += 1;
             else _weaponId -= 1;
@@ -62,10 +35,32 @@ namespace WeaponSystem
             if (_weaponId < 0) _weaponId += _weaponsCount;
         }
 
-        private void ChangeWeapon()
+        public void ChangeWeapon()
         {
             _currentWeapon.gameObject.SetActive(false);
             _currentWeapon = _weapons[_weaponId];
+            _currentWeapon.gameObject.SetActive(true);
+        }
+        
+        public void PerformAttack()
+        {
+            if (_currentWeapon.CanAttack)
+            {
+                StartCoroutine(_currentWeapon.PerformAttack());
+            }
+        }
+
+        private void InstantiateWeapons()
+        {
+            foreach (WeaponWheelItem item in _weaponWheelConfig.Items)
+            {
+                Weapon weapon = Instantiate(item.Weapon, _weaponHolder);
+                weapon.SetCamera(_camera);
+                weapon.gameObject.SetActive(false);
+                _weapons[item.Id] = weapon;
+            }
+
+            _currentWeapon = _weapons[0];
             _currentWeapon.gameObject.SetActive(true);
         }
     }

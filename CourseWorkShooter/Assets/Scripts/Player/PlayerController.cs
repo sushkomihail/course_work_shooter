@@ -17,9 +17,24 @@ namespace Player
         private float _xSensitivity = 7.5f;
         private float _ySensitivity = 7.5f;
 
+        private void Awake()
+        {
+            _input.Initialize();
+            _input.Controls.Player.ChangeWeapon.performed += context =>
+            {
+                _weaponController.SetWeaponId(context.ReadValue<float>());
+                _weaponController.ChangeWeapon();
+            };
+        }
+
         private void Update()
         {
             Look();
+
+            if (_input.Controls.Player.Shoot.IsPressed())
+            {
+                _weaponController.PerformAttack();
+            }
         }
 
         private void Look()

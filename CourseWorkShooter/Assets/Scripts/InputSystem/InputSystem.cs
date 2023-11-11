@@ -10,7 +10,7 @@ namespace InputSystem
 
         protected abstract void OnDisable();
 
-        private void Awake()
+        public void Initialize()
         {
             Controls = new PlayerControls();
         }
