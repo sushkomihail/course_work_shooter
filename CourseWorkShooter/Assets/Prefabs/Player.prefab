@@ -242,7 +242,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52431ae65c9bf694eb057b2ccb91072a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _input: {fileID: 8992006943186085446}
   _camera: {fileID: 3627593539614939928}
   _weaponHolder: {fileID: 505637421860786685}
   _weaponWheelConfig: {fileID: 11400000, guid: 8412a2cf979c0bd4d95c43a24b14fd94, type: 2}
+  _trailPrefab: {fileID: 5654934940918883830, guid: 7d3ba7bf7d048ee43a9e52bd13ac873c, type: 3}
+  _useTrail: 1

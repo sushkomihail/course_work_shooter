@@ -9,16 +9,18 @@ namespace WeaponSystem
         [SerializeField] protected Vector2 _spreadRange;
         [SerializeField] protected LayerMask _attackMask;
         [SerializeField] protected int _damage;
-
-        public bool CanAttack => _canAttack;
+        [SerializeField] private bool _useTrail;
 
         protected Camera _camera;
+        protected Attack _attack;
         protected bool _canAttack = true;
 
-        public void SetCamera(Camera camera)
-        {
-            _camera = camera;
-        }
+        public Attack Attack => _attack;
+        public bool CanAttack => _canAttack;
+        public Transform Muzzle => _muzzle;
+        public bool UseTrail => _useTrail;
+
+        public abstract void Initialize(Camera camera);
 
         public abstract IEnumerator PerformAttack();
     }

@@ -26,6 +26,7 @@
             <e p="AssaultRifle.cs" t="Include" />
             <e p="Attack.cs" t="Include" />
             <e p="RaycastAttack.cs" t="Include" />
+            <e p="Trail.cs" t="Include" />
             <e p="Weapon.cs" t="Include" />
             <e p="WeaponController.cs" t="Include" />
             <e p="WeaponWheelConfig.cs" t="Include" />

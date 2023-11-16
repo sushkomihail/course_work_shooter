@@ -18,8 +18,8 @@ namespace WeaponSystem
 
         public override void PerformAttack()
         {
-            Vector3 cameraRayHitPosition = CameraRayHitPosition(_camera, _spreadRange);
-            Vector3 directionToTarget = cameraRayHitPosition - _rayOrigin.position;
+            CalculateHitPosition(_camera, _spreadRange);
+            Vector3 directionToTarget = _hitPosition - _rayOrigin.position;
 
             if (Physics.Raycast(_rayOrigin.position, directionToTarget, out RaycastHit hit,
                 directionToTarget.magnitude, _attackMask.value))

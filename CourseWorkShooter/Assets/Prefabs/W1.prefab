@@ -130,7 +130,7 @@ Transform:
   m_GameObject: {fileID: 7212230753022489680}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.218, z: 0.897}
+  m_LocalPosition: {x: 0.344, y: -0.211, z: 0.897}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -183,9 +183,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _muzzle: {fileID: 5883786382547776415}
-  _spreadRange: {x: 0, y: 0}
+  _spreadRange: {x: 0.05, y: 0.05}
   _attackMask:
     serializedVersion: 2
     m_Bits: 4294967295
   _damage: 10
+  _useTrail: 1
   _fireRate: 200

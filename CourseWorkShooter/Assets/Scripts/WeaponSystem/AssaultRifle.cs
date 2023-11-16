@@ -7,11 +7,11 @@ namespace WeaponSystem
     {
         [SerializeField] private int _fireRate;
 
-        private Attack _attack;
         private float _timeBetweenShots;
-        
-        private void Awake()
+
+        public override void Initialize(Camera camera)
         {
+            _camera = camera;
             _attack = new RaycastAttack(_camera, _muzzle, _spreadRange, _attackMask, _damage);
             _timeBetweenShots = 60.0f / _fireRate;
         }
@@ -19,7 +19,7 @@ namespace WeaponSystem
         public override IEnumerator PerformAttack()
         {
             _canAttack = false;
-            Debug.Log("shot!");
+            _attack.PerformAttack();
             yield return new WaitForSeconds(_timeBetweenShots);
             _canAttack = true;
         }

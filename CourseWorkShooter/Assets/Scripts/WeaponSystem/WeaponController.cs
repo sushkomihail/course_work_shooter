@@ -7,6 +7,7 @@ namespace WeaponSystem
         [SerializeField] private Camera _camera;
         [SerializeField] private Transform _weaponHolder;
         [SerializeField] private WeaponWheelConfig _weaponWheelConfig;
+        [SerializeField] private Trail _trailPrefab;
 
         private Weapon[] _weapons;
         private Weapon _currentWeapon;
@@ -18,11 +19,6 @@ namespace WeaponSystem
             _weaponsCount = _weaponWheelConfig.Items.Length;
             _weapons = new Weapon[_weaponsCount];
             InstantiateWeapons();
-        }
-
-        private void Update()
-        {
-            
         }
         
         public void SetWeaponId(float mouseScroll)
@@ -47,6 +43,12 @@ namespace WeaponSystem
             if (_currentWeapon.CanAttack)
             {
                 StartCoroutine(_currentWeapon.PerformAttack());
+
+                if (_currentWeapon.UseTrail)
+                {
+                    Trail trail = Instantiate(_trailPrefab, _currentWeapon.Muzzle.position, Quaternion.identity);
+                    StartCoroutine(trail.ShowTrail(_currentWeapon.Muzzle.position, _currentWeapon.Attack.HitPosition));
+                }
             }
         }
 
@@ -55,7 +57,7 @@ namespace WeaponSystem
             foreach (WeaponWheelItem item in _weaponWheelConfig.Items)
             {
                 Weapon weapon = Instantiate(item.Weapon, _weaponHolder);
-                weapon.SetCamera(_camera);
+                weapon.Initialize(_camera);
                 weapon.gameObject.SetActive(false);
                 _weapons[item.Id] = weapon;
             }
