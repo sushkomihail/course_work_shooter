@@ -13,7 +13,4 @@ MonoBehaviour:
   m_Name: WeaponsWheelConfig
   m_EditorClassIdentifier: 
   _items:
-  - _weapon: {fileID: 8794966681907410451, guid: d38ef6b58b9aeef47b8fadb31f2f5376, type: 3}
-  - _weapon: {fileID: 5372393996493701072, guid: f3b8067984dcdde4eaf3782d6327e92a, type: 3}
-  - _weapon: {fileID: 4921834143552918674, guid: 253a4fb63b2897b40a21ed135587e7e1, type: 3}
-  - _weapon: {fileID: 1746092490363036921, guid: 7493019f73445d44786af587e26d1242, type: 3}
+  - _weapon: {fileID: 5097093629620742399, guid: ee329c3cd08e58645834d20702d7f6c6, type: 3}

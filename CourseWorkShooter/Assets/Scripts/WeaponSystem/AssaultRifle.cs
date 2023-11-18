@@ -11,7 +11,8 @@ namespace WeaponSystem
 
         public override void Initialize(Camera camera)
         {
-            _camera = camera;
+            base.Initialize(camera);
+            
             _attack = new RaycastAttack(_camera, _muzzle, _spreadRange, _attackMask, _damage);
             _timeBetweenShots = 60.0f / _fireRate;
         }

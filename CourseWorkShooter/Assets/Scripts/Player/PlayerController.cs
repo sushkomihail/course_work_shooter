@@ -14,8 +14,8 @@ namespace Player
         private float _yLookAngle;
         private const int MinVerticalLookAngle = -90;
         private const int MaxVerticalLookAngle = 90;
-        private float _xSensitivity = 7.5f;
-        private float _ySensitivity = 7.5f;
+        private float _xSensitivity = 10f;
+        private float _ySensitivity = 10f;
 
         private void Awake()
         {
@@ -25,6 +25,9 @@ namespace Player
                 _weaponController.SetWeaponId(context.ReadValue<float>());
                 _weaponController.ChangeWeapon();
             };
+            
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
 
         private void Update()

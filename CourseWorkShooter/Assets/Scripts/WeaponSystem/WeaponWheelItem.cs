@@ -8,20 +8,20 @@ namespace WeaponSystem
     {
         [SerializeField] private Weapon _weapon;
 
-        public Weapon Weapon => _weapon;
-        public int Id => _id;
-
-        private static int _nextId;
+        private static int _currentId;
         private int _id;
+        
+        public int Id => _id;
+        public Weapon Weapon => _weapon;
 
         public WeaponWheelItem()
         {
             AssignId();
         }
-        
+
         private void AssignId()
         {
-            _id = _nextId++;
+            _id = _currentId++;
         }
     }
 }

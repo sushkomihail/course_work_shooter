@@ -64,7 +64,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.2
+  near clip plane: 0.1
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -246,4 +246,3 @@ MonoBehaviour:
   _weaponHolder: {fileID: 505637421860786685}
   _weaponWheelConfig: {fileID: 11400000, guid: 8412a2cf979c0bd4d95c43a24b14fd94, type: 2}
   _trailPrefab: {fileID: 5654934940918883830, guid: 7d3ba7bf7d048ee43a9e52bd13ac873c, type: 3}
-  _useTrail: 1

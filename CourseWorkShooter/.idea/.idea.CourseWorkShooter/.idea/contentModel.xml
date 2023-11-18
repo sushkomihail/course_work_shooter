@@ -8,7 +8,12 @@
         <e p="Materials" t="Include">
           <e p="WeaponMaterials" t="Include" />
         </e>
-        <e p="Prefabs" t="Include" />
+        <e p="Models" t="Include">
+          <e p="Weapons" t="Include" />
+        </e>
+        <e p="Prefabs" t="Include">
+          <e p="Weapons" t="Include" />
+        </e>
         <e p="Scenes" t="Include" />
         <e p="Scripts" t="Include">
           <e p="Health" t="Include">
@@ -26,6 +31,7 @@
             <e p="AssaultRifle.cs" t="Include" />
             <e p="Attack.cs" t="Include" />
             <e p="RaycastAttack.cs" t="Include" />
+            <e p="Shotgun.cs" t="Include" />
             <e p="Trail.cs" t="Include" />
             <e p="Weapon.cs" t="Include" />
             <e p="WeaponController.cs" t="Include" />

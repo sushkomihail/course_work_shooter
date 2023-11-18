@@ -16,8 +16,6 @@ namespace WeaponSystem
 
         private void Awake()
         {
-            _weaponsCount = _weaponWheelConfig.Items.Length;
-            _weapons = new Weapon[_weaponsCount];
             InstantiateWeapons();
         }
         
@@ -54,12 +52,17 @@ namespace WeaponSystem
 
         private void InstantiateWeapons()
         {
-            foreach (WeaponWheelItem item in _weaponWheelConfig.Items)
+            Weapon[] weaponPrefabs = _weaponWheelConfig.FindWeapons(new[] {0});
+            _weapons = new Weapon[weaponPrefabs.Length];
+            
+            int index = 0;
+            
+            foreach (Weapon prefab in weaponPrefabs)
             {
-                Weapon weapon = Instantiate(item.Weapon, _weaponHolder);
+                Weapon weapon = Instantiate(prefab, _weaponHolder);
                 weapon.Initialize(_camera);
                 weapon.gameObject.SetActive(false);
-                _weapons[item.Id] = weapon;
+                _weapons[index++] = weapon;
             }
 
             _currentWeapon = _weapons[0];
