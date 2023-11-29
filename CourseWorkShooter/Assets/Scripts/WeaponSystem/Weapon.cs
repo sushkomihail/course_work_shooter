@@ -9,24 +9,23 @@ namespace WeaponSystem
         [SerializeField] protected Vector2 _spreadRange;
         [SerializeField] protected LayerMask _attackMask;
         [SerializeField] protected int _damage;
+        [SerializeField] protected float _shotCooldownTime;
+        [SerializeField] private bool _canHold;
         [SerializeField] private Vector3 _positionInHolder; // !!!!!!!!!
         [SerializeField] private bool _useTrail; // !!!!!!!!!
 
-        protected Camera _camera;
         protected Attack _attack;
-        protected bool _canAttack = true;
+        protected bool _isReadyToShoot = true;
 
-        public Transform Muzzle => _muzzle;
-        public Attack Attack => _attack;
-        public bool CanAttack => _canAttack;
+        public bool IsReadyToShoot => _isReadyToShoot;
+        public bool CanHold => _canHold;
         public bool UseTrail => _useTrail;
 
         public virtual void Initialize(Camera camera)
         {
-            _camera = camera;
             transform.localPosition = _positionInHolder;
         }
 
-        public abstract IEnumerator PerformAttack();
+        public abstract IEnumerator PerformAttack(Trail trail);
     }
 }

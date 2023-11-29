@@ -33,7 +33,6 @@ Transform:
   - {fileID: 7863050143046950554}
   - {fileID: 4598973381997040732}
   - {fileID: 3487402117147476660}
-  - {fileID: 4810250531658625510}
   m_Father: {fileID: 4727400663055080544}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2447205653354538549
@@ -149,6 +148,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 4810250531658625510}
   - {fileID: 1873066138702396742}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -164,15 +164,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f21db36c0fa047dc84c9cbdb11ed00d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _positionInHolder: {x: 0.25, y: -0.15, z: 0.53}
   _muzzle: {fileID: 4810250531658625510}
   _spreadRange: {x: 0.05, y: 0.05}
   _attackMask:
     serializedVersion: 2
     m_Bits: 4294967295
   _damage: 3
+  _shotCooldownTime: 0.1
+  _canHold: 1
+  _positionInHolder: {x: 0.25, y: -0.15, z: 0.53}
   _useTrail: 1
-  _fireRate: 600
 --- !u!1 &3049837616224943771
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,5 +452,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1873066138702396742}
+  m_Father: {fileID: 4727400663055080544}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -16,38 +16,30 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="964bf02c-bc4c-47dd-b461-5432e5d36519" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Shotgun.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Shotgun.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CourseWorkShooter/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CourseWorkShooter/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CourseWorkShooter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CourseWorkShooter/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Configs/WeaponsWheelConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Configs/WeaponsWheelConfig.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/WeaponMaterials/W1Material.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/WeaponMaterials/W1Material.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/WeaponMaterials/W2Material.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/WeaponMaterials/W2Material.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/WeaponMaterials/W3Material.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/WeaponMaterials/W3Material.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/WeaponMaterials/W4Material.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/WeaponMaterials/W4Material.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/W1.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/W1.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/W2.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/W2.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/W3.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/W3.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/W4.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/W4.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Weapons/Bennelli_M4.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Weapons/Bennelli_M4.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Weapons/AK74.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Weapons/AK74.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Weapons/Bennelli_M4.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Weapons/Bennelli_M4.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Weapons/Bennelli_M4.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Weapons/Bennelli_M4.prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/AssaultRifle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/AssaultRifle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Attack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Attack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Shotgun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Shotgun.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Weapon.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponWheelConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponWheelConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponWheelItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponWheelItem.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,15 +61,16 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/InputSystem/InputSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Trail.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/RaycastAttack.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Attack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ArrayExtensions.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponWheelConfig.cs" />
+        <option value="$PROJECT_DIR$/Assets/README.txt" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponWheelItem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponWheelConfig.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/AssaultRifle.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Shotgun.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Weapon.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Shotgun.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Attack.cs" />
       </list>
     </option>
   </component>
@@ -128,6 +121,10 @@
       <workItem from="1699718699981" duration="4713000" />
       <workItem from="1700150476037" duration="3975000" />
       <workItem from="1700233732513" duration="7658000" />
+      <workItem from="1700373207002" duration="5555000" />
+      <workItem from="1700924867321" duration="24000" />
+      <workItem from="1700924933809" duration="4710000" />
+      <workItem from="1701253562288" duration="4210000" />
     </task>
     <servers />
   </component>

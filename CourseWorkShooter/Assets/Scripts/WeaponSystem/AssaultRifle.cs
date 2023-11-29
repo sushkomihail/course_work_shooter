@@ -5,24 +5,21 @@ namespace WeaponSystem
 {
     public class AssaultRifle : Weapon
     {
-        [SerializeField] private int _fireRate;
-
-        private float _timeBetweenShots;
-
         public override void Initialize(Camera camera)
         {
             base.Initialize(camera);
             
-            _attack = new RaycastAttack(_camera, _muzzle, _spreadRange, _attackMask, _damage);
-            _timeBetweenShots = 60.0f / _fireRate;
+            _attack = new RaycastAttack(camera, _muzzle, _spreadRange, _attackMask, _damage);
         }
 
-        public override IEnumerator PerformAttack()
+        public override IEnumerator PerformAttack(Trail trailPrefab)
         {
-            _canAttack = false;
+            _isReadyToShoot = false;
             _attack.PerformAttack();
-            yield return new WaitForSeconds(_timeBetweenShots);
-            _canAttack = true;
+            Trail trail = Instantiate(trailPrefab);
+            trail.StartCoroutine(trail.ShowTrail(_muzzle.position, _attack.HitPosition));
+            yield return new WaitForSeconds(_shotCooldownTime);
+            _isReadyToShoot = true;
         }
     }
 }

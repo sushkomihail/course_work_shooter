@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace WeaponSystem
 {
@@ -7,24 +8,13 @@ namespace WeaponSystem
     {
         [SerializeField] private WeaponWheelItem[] _items;
 
-        public Weapon[] FindWeapons(int[] weaponIdentificators)
+        public List<Weapon> FindWeapons(int[] weaponIdentificators)
         {
-            int identificatorsCount = weaponIdentificators.Length;
-            Weapon[] weapons = new Weapon[identificatorsCount];
+            List<Weapon> weapons = new List<Weapon>();
 
-            int idIndex = 0;
-
-            foreach (WeaponWheelItem item in _items)
+            foreach (int id in weaponIdentificators)
             {
-                int id = weaponIdentificators[idIndex];
-                
-                if (item.Id == id)
-                {
-                    weapons[idIndex] = item.Weapon;
-                    idIndex += 1;
-                }
-
-                if (idIndex == identificatorsCount) break;
+                weapons.Add(_items[id].Weapon);
             }
 
             return weapons;

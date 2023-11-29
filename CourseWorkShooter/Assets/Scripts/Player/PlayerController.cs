@@ -25,6 +25,8 @@ namespace Player
                 _weaponController.SetWeaponId(context.ReadValue<float>());
                 _weaponController.ChangeWeapon();
             };
+            _input.Controls.Player.Shoot.started += _ => _weaponController.SetFireButtonState(true);
+            _input.Controls.Player.Shoot.canceled += _ => _weaponController.SetFireButtonState(false);
             
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
@@ -33,11 +35,6 @@ namespace Player
         private void Update()
         {
             Look();
-
-            if (_input.Controls.Player.Shoot.IsPressed())
-            {
-                _weaponController.PerformAttack();
-            }
         }
 
         private void Look()

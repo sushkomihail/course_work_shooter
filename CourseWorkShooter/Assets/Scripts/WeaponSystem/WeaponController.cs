@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace WeaponSystem
@@ -9,16 +10,24 @@ namespace WeaponSystem
         [SerializeField] private WeaponWheelConfig _weaponWheelConfig;
         [SerializeField] private Trail _trailPrefab;
 
-        private Weapon[] _weapons;
+        private List<Weapon> _weapons;
         private Weapon _currentWeapon;
         private int _weaponsCount;
         private int _weaponId;
 
+        private bool _isFireButtonPressed;
+
         private void Awake()
         {
+            _weapons = new List<Weapon>();
             InstantiateWeapons();
         }
-        
+
+        private void Update()
+        {
+            PerformAttack();
+        }
+
         public void SetWeaponId(float mouseScroll)
         {
             if (mouseScroll > 0) _weaponId += 1;
@@ -28,6 +37,11 @@ namespace WeaponSystem
 
             if (_weaponId < 0) _weaponId += _weaponsCount;
         }
+        
+        public void SetFireButtonState(bool isPressed)
+        {
+            _isFireButtonPressed = isPressed;
+        }
 
         public void ChangeWeapon()
         {
@@ -35,38 +49,35 @@ namespace WeaponSystem
             _currentWeapon = _weapons[_weaponId];
             _currentWeapon.gameObject.SetActive(true);
         }
-        
-        public void PerformAttack()
-        {
-            if (_currentWeapon.CanAttack)
-            {
-                StartCoroutine(_currentWeapon.PerformAttack());
-
-                if (_currentWeapon.UseTrail)
-                {
-                    Trail trail = Instantiate(_trailPrefab, _currentWeapon.Muzzle.position, Quaternion.identity);
-                    StartCoroutine(trail.ShowTrail(_currentWeapon.Muzzle.position, _currentWeapon.Attack.HitPosition));
-                }
-            }
-        }
 
         private void InstantiateWeapons()
         {
-            Weapon[] weaponPrefabs = _weaponWheelConfig.FindWeapons(new[] {0});
-            _weapons = new Weapon[weaponPrefabs.Length];
-            
-            int index = 0;
-            
+            List<Weapon> weaponPrefabs = _weaponWheelConfig.FindWeapons(new[] {0, 1});
+
             foreach (Weapon prefab in weaponPrefabs)
             {
                 Weapon weapon = Instantiate(prefab, _weaponHolder);
                 weapon.Initialize(_camera);
                 weapon.gameObject.SetActive(false);
-                _weapons[index++] = weapon;
+                _weapons.Add(weapon);
             }
 
+            _weaponsCount = _weapons.Count;
             _currentWeapon = _weapons[0];
             _currentWeapon.gameObject.SetActive(true);
+        }
+        
+        private void PerformAttack()
+        {
+            if (_isFireButtonPressed && _currentWeapon.IsReadyToShoot)
+            {
+                StartCoroutine(_currentWeapon.PerformAttack(_trailPrefab));
+                
+                if (!_currentWeapon.CanHold)
+                {
+                    _isFireButtonPressed = false;
+                }
+            }
         }
     }
 }
