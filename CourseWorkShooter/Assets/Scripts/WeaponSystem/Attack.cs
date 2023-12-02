@@ -8,9 +8,11 @@ namespace WeaponSystem
         protected readonly int _damage;
         private const int RayDistanceWithoutHit = 200;
 
-        protected Vector3 _hitPosition;
-
-        public Vector3 HitPosition => _hitPosition;
+        public Vector3 HitPosition { get; private set; }
+        
+        public Vector3 HitNormal { get; private set; }
+        
+        public bool IsHit { get; private set; }
 
         protected Attack(LayerMask attackMask, int damage)
         {
@@ -31,11 +33,14 @@ namespace WeaponSystem
             
             if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity))
             {
-                _hitPosition = hit.point;
+                IsHit = true;
+                HitPosition = hit.point;
+                HitNormal = hit.normal;
                 return;
             }
-            
-            _hitPosition = cameraTransform.position + rayDirection * RayDistanceWithoutHit;
+
+            IsHit = false;
+            HitPosition = cameraTransform.position + rayDirection * RayDistanceWithoutHit;
         }
         
         private Vector3 CalculateSpread(Vector2 spreadRange)

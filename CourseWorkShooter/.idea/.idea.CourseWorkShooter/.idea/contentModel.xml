@@ -6,12 +6,14 @@
       <e p="Assets" t="Include">
         <e p="Configs" t="Include" />
         <e p="Materials" t="Include">
-          <e p="WeaponMaterials" t="Include" />
+          <e p="Effects" t="Include" />
+          <e p="Weapons" t="Include" />
         </e>
         <e p="Models" t="Include">
           <e p="Weapons" t="Include" />
         </e>
         <e p="Prefabs" t="Include">
+          <e p="Particles" t="Include" />
           <e p="Weapons" t="Include" />
         </e>
         <e p="README.txt" t="Include" />
@@ -31,14 +33,25 @@
           <e p="WeaponSystem" t="Include">
             <e p="AssaultRifle.cs" t="Include" />
             <e p="Attack.cs" t="Include" />
+            <e p="Impact.cs" t="Include" />
             <e p="RaycastAttack.cs" t="Include" />
             <e p="Shotgun.cs" t="Include" />
             <e p="Trail.cs" t="Include" />
             <e p="Weapon.cs" t="Include" />
             <e p="WeaponController.cs" t="Include" />
+            <e p="WeaponView.cs" t="Include" />
             <e p="WeaponWheelConfig.cs" t="Include" />
             <e p="WeaponWheelItem.cs" t="Include" />
           </e>
+        </e>
+        <e p="Sounds" t="Include">
+          <e p="Bullets" t="Include" />
+          <e p="Impacts" t="Include" />
+          <e p="Weapon" t="Include" />
+        </e>
+        <e p="Textures" t="Include">
+          <e p="Effects" t="Include" />
+          <e p="Weapons" t="Include" />
         </e>
       </e>
       <e p="CourseWorkShooter.sln" t="IncludeFlat" />

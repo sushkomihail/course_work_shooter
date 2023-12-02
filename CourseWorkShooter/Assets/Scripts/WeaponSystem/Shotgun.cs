@@ -14,15 +14,19 @@ namespace WeaponSystem
             _attack = new RaycastAttack(camera, _muzzle, _spreadRange, _attackMask, _damage);
         }
 
-        public override IEnumerator PerformAttack(Trail trailPrefab)
+        public override IEnumerator PerformAttack()
         {
             _isReadyToShoot = false;
             
             for (int i = 0; i < _shotsCount; i++)
             {
                 _attack.PerformAttack();
-                Trail trail = Instantiate(trailPrefab);
-                trail.StartCoroutine(trail.ShowTrail(_muzzle.position, _attack.HitPosition));
+                _view.PlayTrail(_muzzle.position, _attack.HitPosition);
+
+                if (_attack.IsHit)
+                {
+                    _view.PlayImpactParticles(_attack.HitPosition, _attack.HitNormal);
+                }
             }
             
             yield return new WaitForSeconds(_shotCooldownTime);

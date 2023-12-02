@@ -8,9 +8,8 @@ namespace WeaponSystem
         [SerializeField] private Camera _camera;
         [SerializeField] private Transform _weaponHolder;
         [SerializeField] private WeaponWheelConfig _weaponWheelConfig;
-        [SerializeField] private Trail _trailPrefab;
 
-        private List<Weapon> _weapons;
+        private readonly List<Weapon> _weapons = new List<Weapon>();
         private Weapon _currentWeapon;
         private int _weaponsCount;
         private int _weaponId;
@@ -19,7 +18,6 @@ namespace WeaponSystem
 
         private void Awake()
         {
-            _weapons = new List<Weapon>();
             InstantiateWeapons();
         }
 
@@ -71,8 +69,10 @@ namespace WeaponSystem
         {
             if (_isFireButtonPressed && _currentWeapon.IsReadyToShoot)
             {
-                StartCoroutine(_currentWeapon.PerformAttack(_trailPrefab));
-                
+                StartCoroutine(_currentWeapon.PerformAttack());
+                _currentWeapon.View.PlayMuzzleFlashParticles();
+                _currentWeapon.View.PlayShootSound();
+
                 if (!_currentWeapon.CanHold)
                 {
                     _isFireButtonPressed = false;
