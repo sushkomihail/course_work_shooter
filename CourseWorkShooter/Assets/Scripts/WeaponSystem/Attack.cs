@@ -20,7 +20,7 @@ namespace WeaponSystem
             _damage = damage;
         }
         
-        public abstract void PerformAttack();
+        public abstract void Perform();
         
         protected void CalculateHitPosition(Camera camera, Vector3 spreadRange)
         {

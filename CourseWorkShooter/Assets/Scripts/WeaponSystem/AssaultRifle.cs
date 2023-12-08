@@ -15,7 +15,7 @@ namespace WeaponSystem
         public override IEnumerator PerformAttack()
         {
             _isReadyToShoot = false;
-            _attack.PerformAttack();
+            _attack.Perform();
             _view.PlayTrail(_muzzle.position, _attack.HitPosition);
 
             if (_attack.IsHit)

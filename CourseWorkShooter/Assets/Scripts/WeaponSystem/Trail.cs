@@ -5,7 +5,7 @@ namespace WeaponSystem
 {
     public class Trail : MonoBehaviour
     {
-        private const int TrailSpeed = 100;
+        private const int TrailSpeed = 300;
 
         public IEnumerator ShowTrail(Vector3 startPoint, Vector3 endPoint)
         {

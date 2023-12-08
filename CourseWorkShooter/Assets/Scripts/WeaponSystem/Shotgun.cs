@@ -20,7 +20,7 @@ namespace WeaponSystem
             
             for (int i = 0; i < _shotsCount; i++)
             {
-                _attack.PerformAttack();
+                _attack.Perform();
                 _view.PlayTrail(_muzzle.position, _attack.HitPosition);
 
                 if (_attack.IsHit)

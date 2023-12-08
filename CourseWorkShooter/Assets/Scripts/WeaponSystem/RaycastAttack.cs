@@ -16,7 +16,7 @@ namespace WeaponSystem
             _rayOrigin = rayOrigin;
         }
 
-        public override void PerformAttack()
+        public override void Perform()
         {
             CalculateHitPosition(_camera, _spreadRange);
             Vector3 directionToTarget = HitPosition - _rayOrigin.position;

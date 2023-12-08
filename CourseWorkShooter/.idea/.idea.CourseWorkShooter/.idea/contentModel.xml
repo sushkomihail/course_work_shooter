@@ -35,6 +35,7 @@
             <e p="Attack.cs" t="Include" />
             <e p="Impact.cs" t="Include" />
             <e p="RaycastAttack.cs" t="Include" />
+            <e p="Recoil.cs" t="Include" />
             <e p="Shotgun.cs" t="Include" />
             <e p="Trail.cs" t="Include" />
             <e p="Weapon.cs" t="Include" />
