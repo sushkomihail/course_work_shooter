@@ -10,6 +10,11 @@
           <e p="Weapons" t="Include" />
         </e>
         <e p="Models" t="Include">
+          <e p="Character" t="Include">
+            <e p="SkuFISH" t="Include">
+              <e p="CartoonShader.shader" t="Include" />
+            </e>
+          </e>
           <e p="Weapons" t="Include" />
         </e>
         <e p="Prefabs" t="Include">
@@ -19,6 +24,7 @@
         <e p="README.txt" t="Include" />
         <e p="Scenes" t="Include" />
         <e p="Scripts" t="Include">
+          <e p="GameManager.cs" t="Include" />
           <e p="Health" t="Include">
             <e p="Health.cs" t="Include" />
           </e>
@@ -28,7 +34,9 @@
             <e p="PlayerInputSystem.cs" t="Include" />
           </e>
           <e p="Player" t="Include">
+            <e p="PlayerCamera.cs" t="Include" />
             <e p="PlayerController.cs" t="Include" />
+            <e p="PlayerMovement.cs" t="Include" />
           </e>
           <e p="WeaponSystem" t="Include">
             <e p="AssaultRifle.cs" t="Include" />

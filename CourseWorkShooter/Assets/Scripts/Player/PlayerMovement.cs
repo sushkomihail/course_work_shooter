@@ -1,81 +1,80 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-
-public class PlayerMovement : MonoBehaviour
+namespace Player
 {
-    public Camera playerCamera;
-    public float walkSpeed = 6f;
-    public float runSpeed = 12f;
-    public float jumpPower = 7f;
-    public float gravity = 10f;
-    public float lookSpeed = 2f;
-    public float lookXLimit = 45f;
-    public float defaultHeight = 2f;
-    public float crouchHeight = 1f;
-    public float crouchSpeed = 3f;
-
-    private Vector3 moveDirection = Vector3.zero;
-    private float rotationX = 0;
-    private CharacterController characterController;
-
-    private bool canMove = true;
-
-    void Start()
+    public class PlayerMovement : MonoBehaviour
     {
-        characterController = GetComponent<CharacterController>();
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-    }
+        [SerializeField] private CharacterController _controller;
+        [SerializeField] private float _walkSpeed = 6f;
+        [SerializeField] private float _runSpeed = 12f;
+        [SerializeField] private float _jumpPower = 7f;
+        [SerializeField] private float _defaultHeight = 2f;
+        [SerializeField] private float _crouchHeight = 1f;
+        [SerializeField] private float _crouchSpeed = 3f;
+        
+        private float _gravity;
+        private Vector3 _moveDirection;
+        private float _speed;
+        private bool _isCrouching;
 
-    void Update()
-    {
-        Vector3 forward = transform.TransformDirection(Vector3.forward);
-        Vector3 right = transform.TransformDirection(Vector3.right);
-
-        bool isRunning = Input.GetKey(KeyCode.LeftShift);
-        float curSpeedX = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Vertical") : 0;
-        float curSpeedY = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Horizontal") : 0;
-        float movementDirectionY = moveDirection.y;
-        moveDirection = (forward * curSpeedX) + (right * curSpeedY);
-
-        if (Input.GetButton("Jump") && canMove && characterController.isGrounded)
+        void Start()
         {
-            moveDirection.y = jumpPower;
-        }
-        else
-        {
-            moveDirection.y = movementDirectionY;
+            _gravity = Physics.gravity.magnitude;
+
+            _controller.height = _defaultHeight;
+            _speed = _walkSpeed;
         }
 
-        if (!characterController.isGrounded)
+        public void Move(Vector2 inputVector)
         {
-            moveDirection.y -= gravity * Time.deltaTime;
+            Vector3 inputVectorRelativeToPlayer = transform.forward * inputVector.y + transform.right * inputVector.x;
+            _moveDirection.x = inputVectorRelativeToPlayer.x * _speed;
+            _moveDirection.z = inputVectorRelativeToPlayer.z * _speed;
+            
+            if (!_controller.isGrounded)
+            {
+                _moveDirection.y -= _gravity * Time.deltaTime;
+            }
+
+            _controller.Move(_moveDirection * Time.deltaTime);
         }
 
-        if (Input.GetKey(KeyCode.R) && canMove)
+        public void OnRun(bool isRunButtonPressed)
         {
-            characterController.height = crouchHeight;
-            walkSpeed = crouchSpeed;
-            runSpeed = crouchSpeed;
+            if (_isCrouching) return;
 
+            if (isRunButtonPressed)
+            {
+                _speed = _runSpeed;
+            }
+            else
+            {
+                _speed = _walkSpeed;
+            }
         }
-        else
+
+        public void OnJump()
         {
-            characterController.height = defaultHeight;
-            walkSpeed = 6f;
-            runSpeed = 12f;
+            if (!_controller.isGrounded) return;
+            
+            _moveDirection.y = _jumpPower;
+            Debug.Log("jump");
         }
 
-        characterController.Move(moveDirection * Time.deltaTime);
-
-        if (canMove)
+        public void OnCrouch(bool isCrouchButtonPressed)
         {
-            rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
-            rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
-            playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
-            transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
+            if (isCrouchButtonPressed)
+            {
+                _isCrouching = true;
+                _controller.height = _crouchHeight;
+                _speed = _crouchSpeed;
+            }
+            else
+            {
+                _controller.height = _defaultHeight;
+                _speed = _walkSpeed;
+                _isCrouching = false;
+            }
         }
     }
 }

@@ -103,8 +103,9 @@ GameObject:
   - component: {fileID: 6586324994890716060}
   - component: {fileID: 5664082449883374584}
   - component: {fileID: 3443774980142176251}
-  - component: {fileID: 2381687219729703554}
+  - component: {fileID: 794914341982658611}
   - component: {fileID: 8992006943186085446}
+  - component: {fileID: 2400017139035066097}
   - component: {fileID: 6172946798694511160}
   - component: {fileID: 6555800731830567829}
   m_Layer: 0
@@ -180,8 +181,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &2381687219729703554
-CapsuleCollider:
+--- !u!143 &794914341982658611
+CharacterController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -198,10 +199,13 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
+  serializedVersion: 3
   m_Height: 2
-  m_Direction: 1
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8992006943186085446
 MonoBehaviour:
@@ -215,6 +219,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17595b740820405b9ee7920d3d1e64f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2400017139035066097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4925979886651638410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 704a99b38fa55af4c81754e6a843b206, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _controller: {fileID: 794914341982658611}
+  _walkSpeed: 6
+  _runSpeed: 12
+  _jumpPower: 7
+  _defaultHeight: 2
+  _crouchHeight: 1
+  _crouchSpeed: 3
 --- !u!114 &6172946798694511160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,6 +251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _input: {fileID: 8992006943186085446}
+  _movement: {fileID: 2400017139035066097}
   _weaponController: {fileID: 6555800731830567829}
   _cameraTransform: {fileID: 505637421860786685}
 --- !u!114 &6555800731830567829
@@ -245,4 +269,3 @@ MonoBehaviour:
   _camera: {fileID: 3627593539614939928}
   _weaponHolder: {fileID: 505637421860786685}
   _weaponWheelConfig: {fileID: 11400000, guid: 8412a2cf979c0bd4d95c43a24b14fd94, type: 2}
-  _trailPrefab: {fileID: 5654934940918883830, guid: 7d3ba7bf7d048ee43a9e52bd13ac873c, type: 3}
