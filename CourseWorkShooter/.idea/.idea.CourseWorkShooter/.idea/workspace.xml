@@ -26,16 +26,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="964bf02c-bc4c-47dd-b461-5432e5d36519" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Recoil.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Recoil.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CourseWorkShooter/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CourseWorkShooter/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CourseWorkShooter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CourseWorkShooter/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Trail.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Trail.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/AssaultRifle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/AssaultRifle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Attack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Attack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/RaycastAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/RaycastAttack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Shotgun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Shotgun.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Trail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Trail.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputSystem/PlayerControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputSystem/PlayerControls.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputSystem/PlayerControls.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputSystem/PlayerControls.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerCam.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerCamera.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerCam.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerCamera.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +61,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/ArrayExtensions.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponWheelItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponWheelConfig.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/HitEffectsConfig.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/VfxActions.cs" />
         <option value="$PROJECT_DIR$/Assets/JMO Assets/WarFX/Scripts/WFX_LightFlicker.cs" />
@@ -73,9 +74,21 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Shotgun.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/AssaultRifle.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Trail.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Attack.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Recoil.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerCam.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerCamera.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/StateMachine/StateBehavior.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/StateMachine/PlayerStates.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/StateMachine/PlayerStateBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/StateMachine/StateBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/StateMachine/State.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/WalkState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/IdleState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/RunState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/AttackState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/StateMachine/PlayerStateMachine.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" />
       </list>
     </option>
   </component>
@@ -134,8 +147,9 @@
       <workItem from="1701523100965" duration="7077000" />
       <workItem from="1701533410901" duration="97000" />
       <workItem from="1701533738942" duration="1850000" />
-      <workItem from="1701699132038" duration="1282000" />
-      <workItem from="1701943518875" duration="2091000" />
+      <workItem from="1702023450110" duration="2113000" />
+      <workItem from="1702194249938" duration="7301000" />
+      <workItem from="1702464227219" duration="6941000" />
     </task>
     <servers />
   </component>
@@ -160,9 +174,9 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="143" key="RiderGenerateDialog" timestamp="1700241102364">
+    <state x="552" y="143" key="RiderGenerateDialog" timestamp="1702201364048">
       <screen x="0" y="0" width="1440" height="852" />
     </state>
-    <state x="552" y="143" key="RiderGenerateDialog/0.0.1440.852@0.0.1440.852" timestamp="1700241102364" />
+    <state x="552" y="143" key="RiderGenerateDialog/0.0.1440.852@0.0.1440.852" timestamp="1702201364048" />
   </component>
 </project>
