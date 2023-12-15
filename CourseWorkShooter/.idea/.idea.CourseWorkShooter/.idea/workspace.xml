@@ -26,18 +26,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="964bf02c-bc4c-47dd-b461-5432e5d36519" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CourseWorkShooter/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CourseWorkShooter/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CourseWorkShooter/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CourseWorkShooter/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CourseWorkShooter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CourseWorkShooter/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputSystem/PlayerControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputSystem/PlayerControls.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputSystem/PlayerControls.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputSystem/PlayerControls.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerCam.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerCamera.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerCam.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerCamera.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerCamera.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +75,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Shotgun.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/AssaultRifle.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerCam.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerCamera.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StateMachine/StateBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StateMachine/PlayerStates.cs" />
@@ -87,6 +86,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/RunState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/AttackState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StateMachine/PlayerStateMachine.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerCamera.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" />
       </list>
@@ -150,6 +150,9 @@
       <workItem from="1702023450110" duration="2113000" />
       <workItem from="1702194249938" duration="7301000" />
       <workItem from="1702464227219" duration="6941000" />
+      <workItem from="1702543916516" duration="3349000" />
+      <workItem from="1702560533857" duration="3997000" />
+      <workItem from="1702645788503" duration="6553000" />
     </task>
     <servers />
   </component>

@@ -4,27 +4,25 @@ namespace Player
 {
     public class PlayerCamera : MonoBehaviour
     {
-        public float sensX;
-        public float sensY; 
+        [SerializeField] private Transform _cameraTransform;
 
-        public GameObject obj;
+        private float _xLookAngle;
+        private float _yLookAngle;
+        private const int MinVerticalLookAngle = -90;
+        private const int MaxVerticalLookAngle = 90;
+        private float _xSensitivity = 10f;
+        private float _ySensitivity = 10f;
 
-        public Transform orientation;
-
-        float xRotation;
-        float yRotation;
-
-        private void Update() {
-            float mouseX = Input.GetAxisRaw("Mouse X");
-            float mouseY = Input.GetAxisRaw("Mouse Y");
-
-            yRotation +=mouseX;
-            xRotation -=mouseY;
-            xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-
-    
-            transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
-            orientation.rotation = Quaternion.Euler(0,yRotation,0);
+        public void Look(Vector2 lookVector)
+        {
+            _xLookAngle -= lookVector.y * _xSensitivity * Time.deltaTime;
+            _xLookAngle = Mathf.Clamp(_xLookAngle, MinVerticalLookAngle, MaxVerticalLookAngle);
+            
+            _yLookAngle += lookVector.x * _ySensitivity * Time.deltaTime;
+            _yLookAngle = Mathf.Repeat(_yLookAngle, 360);
+            
+            transform.rotation = Quaternion.Euler(0, _yLookAngle, 0);
+            _cameraTransform.localRotation = Quaternion.Euler(_xLookAngle, 0, 0);
         }
     }
 }

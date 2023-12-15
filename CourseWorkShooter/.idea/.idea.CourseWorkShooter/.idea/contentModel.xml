@@ -21,6 +21,7 @@
           <e p="Particles" t="Include" />
           <e p="Weapons" t="Include" />
         </e>
+        <e p="ProBuilder Data" t="Include" />
         <e p="README.txt" t="Include" />
         <e p="Scenes" t="Include" />
         <e p="Scripts" t="Include">
