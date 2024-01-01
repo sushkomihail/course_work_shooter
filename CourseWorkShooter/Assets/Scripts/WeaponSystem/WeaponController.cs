@@ -1,29 +1,44 @@
 using System.Collections.Generic;
+using Player;
 using UnityEngine;
 
 namespace WeaponSystem
 {
     public class WeaponController : MonoBehaviour
     {
-        [SerializeField] private Camera _camera;
-        [SerializeField] private Transform _weaponHolder;
+        [SerializeField] private Transform _cameraTransform;
         [SerializeField] private WeaponWheelConfig _weaponWheelConfig;
 
         private readonly List<Weapon> _weapons = new List<Weapon>();
-        private Weapon _currentWeapon;
-        private int _weaponsCount;
         private int _weaponId;
 
         private bool _isFireButtonPressed;
+        
+        public Weapon CurrentWeapon { get; private set; }
 
-        private void Awake()
+        public void Initialize(ICameraAngles cameraAngles)
         {
-            InstantiateWeapons();
+            PlayerController.OnShoot.AddListener(() => _isFireButtonPressed = true);
+            PlayerController.OnShootEnd.AddListener(() => _isFireButtonPressed = false);
+            InstantiateWeapons(cameraAngles);
         }
-
-        private void Update()
+        
+        public void Attack()
         {
-            PerformAttack();
+            if (_isFireButtonPressed && CurrentWeapon.IsReadyToShoot)
+            {
+                StartCoroutine(CurrentWeapon.PerformAttack());
+                CurrentWeapon.Recoil.SetKickbackParameters();
+                CurrentWeapon.View.PlayMuzzleFlashParticles();
+                CurrentWeapon.View.PlayShootSound();
+
+                if (!CurrentWeapon.CanHold)
+                {
+                    _isFireButtonPressed = false;
+                }
+            }
+            
+            CurrentWeapon.Recoil.UpdateKickback();
         }
 
         public void SetWeaponId(float mouseScroll)
@@ -31,53 +46,32 @@ namespace WeaponSystem
             if (mouseScroll > 0) _weaponId += 1;
             else _weaponId -= 1;
 
-            _weaponId %= _weaponsCount;
+            _weaponId %= _weapons.Count;
 
-            if (_weaponId < 0) _weaponId += _weaponsCount;
-        }
-        
-        public void SetFireButtonState(bool isPressed)
-        {
-            _isFireButtonPressed = isPressed;
+            if (_weaponId < 0) _weaponId += _weapons.Count;
         }
 
         public void ChangeWeapon()
         {
-            _currentWeapon.gameObject.SetActive(false);
-            _currentWeapon = _weapons[_weaponId];
-            _currentWeapon.gameObject.SetActive(true);
+            CurrentWeapon.gameObject.SetActive(false);
+            CurrentWeapon = _weapons[_weaponId];
+            CurrentWeapon.gameObject.SetActive(true);
         }
 
-        private void InstantiateWeapons()
+        private void InstantiateWeapons(ICameraAngles cameraAngles)
         {
-            List<Weapon> weaponPrefabs = _weaponWheelConfig.FindWeapons(new[] {0, 1});
+            List<Weapon> weaponPrefabs = _weaponWheelConfig.FindWeapons(new[] {0});
 
             foreach (Weapon prefab in weaponPrefabs)
             {
-                Weapon weapon = Instantiate(prefab, _weaponHolder);
-                weapon.Initialize(_camera);
+                Weapon weapon = Instantiate(prefab, _cameraTransform);
+                weapon.Initialize(_cameraTransform, cameraAngles);
                 weapon.gameObject.SetActive(false);
                 _weapons.Add(weapon);
             }
 
-            _weaponsCount = _weapons.Count;
-            _currentWeapon = _weapons[0];
-            _currentWeapon.gameObject.SetActive(true);
-        }
-        
-        private void PerformAttack()
-        {
-            if (_isFireButtonPressed && _currentWeapon.IsReadyToShoot)
-            {
-                StartCoroutine(_currentWeapon.PerformAttack());
-                _currentWeapon.View.PlayMuzzleFlashParticles();
-                _currentWeapon.View.PlayShootSound();
-
-                if (!_currentWeapon.CanHold)
-                {
-                    _isFireButtonPressed = false;
-                }
-            }
+            CurrentWeapon = _weapons[0];
+            CurrentWeapon.gameObject.SetActive(true);
         }
     }
 }

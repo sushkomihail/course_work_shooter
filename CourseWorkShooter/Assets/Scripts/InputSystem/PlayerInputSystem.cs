@@ -2,12 +2,12 @@
 {
     public class PlayerInputSystem : InputSystem
     {
-        protected override void OnEnable()
+        public override void OnActivate()
         {
             Controls.Player.Enable();
         }
 
-        protected override void OnDisable()
+        public override void OnDisactivate()
         {
             Controls.Player.Disable();
         }

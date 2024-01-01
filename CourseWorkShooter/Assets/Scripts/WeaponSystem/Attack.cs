@@ -22,9 +22,8 @@ namespace WeaponSystem
         
         public abstract void Perform();
         
-        protected void CalculateHitPosition(Camera camera, Vector3 spreadRange)
+        protected void CalculateHitPosition(Transform cameraTransform, Vector3 spreadRange)
         {
-            Transform cameraTransform = camera.transform;
             Vector3 spread = CalculateSpread(spreadRange);
             Vector3 rayDirection = cameraTransform.forward + 
                                    cameraTransform.right * spread.x + 

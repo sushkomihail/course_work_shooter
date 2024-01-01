@@ -4,15 +4,15 @@ namespace InputSystem
 {
     public abstract class InputSystem : MonoBehaviour
     {
-        public PlayerControls Controls { get; private set; }
+        public Controls Controls { get; private set; }
         
-        protected abstract void OnEnable();
+        public abstract void OnActivate();
 
-        protected abstract void OnDisable();
+        public abstract void OnDisactivate();
 
         public void Initialize()
         {
-            Controls = new PlayerControls();
+            Controls = new Controls();
         }
     }
 }

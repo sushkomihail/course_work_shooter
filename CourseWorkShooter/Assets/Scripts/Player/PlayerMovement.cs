@@ -24,9 +24,8 @@ namespace Player
         private float _jumpVelocity;
         private IEnumerator _currentCrouchRoutine;
         private bool _isCrouching;
-        private bool _isCrouchSmoothing;
 
-        void Start()
+        public void Initialize()
         {
             _controller.height = _defaultHeight;
             _currentSpeed = _walkSpeed;
@@ -100,7 +99,6 @@ namespace Player
 
         private IEnumerator SmoothCrouchRoutine(float targetHeight)
         {
-            _isCrouchSmoothing = true;
             float currentHeight = _controller.height;
             float elapsedTime = 0;
 
@@ -113,12 +111,11 @@ namespace Player
             }
 
             _controller.height = targetHeight;
-            _isCrouchSmoothing = false;
         }
 
         private void StartCrouchSmoothing(float targetHeight)
         {
-            if (_isCrouchSmoothing && _currentCrouchRoutine != null)
+            if (_currentCrouchRoutine != null)
             {
                 StopCoroutine(_currentCrouchRoutine);
             }

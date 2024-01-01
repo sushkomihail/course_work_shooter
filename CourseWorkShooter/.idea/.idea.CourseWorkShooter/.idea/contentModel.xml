@@ -25,6 +25,9 @@
         <e p="README.txt" t="Include" />
         <e p="Scenes" t="Include" />
         <e p="Scripts" t="Include">
+          <e p="Extensions" t="Include">
+            <e p="Vector3Extensions.cs" t="Include" />
+          </e>
           <e p="GameManager.cs" t="Include" />
           <e p="Health" t="Include">
             <e p="Health.cs" t="Include" />
@@ -35,6 +38,7 @@
             <e p="PlayerInputSystem.cs" t="Include" />
           </e>
           <e p="Player" t="Include">
+            <e p="ICameraAngles.cs" t="Include" />
             <e p="PlayerCamera.cs" t="Include" />
             <e p="PlayerController.cs" t="Include" />
             <e p="PlayerMovement.cs" t="Include" />

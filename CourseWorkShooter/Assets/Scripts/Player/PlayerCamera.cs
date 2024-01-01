@@ -2,27 +2,39 @@ using UnityEngine;
 
 namespace Player
 {
-    public class PlayerCamera : MonoBehaviour
+    public class PlayerCamera : MonoBehaviour, ICameraAngles
     {
-        [SerializeField] private Transform _cameraTransform;
+        [SerializeField] private Transform _cameraHolder;
 
-        private float _xLookAngle;
-        private float _yLookAngle;
-        private const int MinVerticalLookAngle = -90;
-        private const int MaxVerticalLookAngle = 90;
+        private float _xAngle;
+        private float _yAngle;
+        private const int MinXAngle = -90;
+        private const int MaxXAngle = 90;
         private float _xSensitivity = 10f;
         private float _ySensitivity = 10f;
+        private float _xAngleBeforeShooting;
 
-        public void Look(Vector2 lookVector)
+        public float XAngle => _xAngle;
+
+        public float XAngleBeforeShooting => _xAngleBeforeShooting;
+
+        public void Initialize()
         {
-            _xLookAngle -= lookVector.y * _xSensitivity * Time.deltaTime;
-            _xLookAngle = Mathf.Clamp(_xLookAngle, MinVerticalLookAngle, MaxVerticalLookAngle);
+            PlayerController.OnShoot.AddListener(() => _xAngleBeforeShooting = _xAngle);
+        }
+
+        public void Look(Vector2 lookVector, Vector3 recoilRotation)
+        {
+            _xAngle -= lookVector.y * _xSensitivity * Time.deltaTime;
+            _xAngle = Mathf.Clamp(_xAngle,
+                MinXAngle - recoilRotation.x,
+                MaxXAngle - recoilRotation.x);
+        
+            _yAngle += lookVector.x * _ySensitivity * Time.deltaTime;
+            _yAngle = Mathf.Repeat(_yAngle, 360);
             
-            _yLookAngle += lookVector.x * _ySensitivity * Time.deltaTime;
-            _yLookAngle = Mathf.Repeat(_yLookAngle, 360);
-            
-            transform.rotation = Quaternion.Euler(0, _yLookAngle, 0);
-            _cameraTransform.localRotation = Quaternion.Euler(_xLookAngle, 0, 0);
+            transform.rotation = Quaternion.Euler(0, _yAngle, 0);
+            _cameraHolder.localRotation = Quaternion.Euler(_xAngle + recoilRotation.x, recoilRotation.y, 0);
         }
     }
 }

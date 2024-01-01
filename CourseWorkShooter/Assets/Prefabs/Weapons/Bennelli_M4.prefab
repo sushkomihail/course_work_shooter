@@ -450,6 +450,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7609934152875171262}
   - component: {fileID: 82416938568833786}
+  - component: {fileID: -3478971870442402000}
   - component: {fileID: 4693585950860712954}
   m_Layer: 0
   m_Name: Bennelli_M4
@@ -489,17 +490,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 813c810b161e4060813e9bb78822a58f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _view: {fileID: 4693585950860712954}
   _muzzle: {fileID: 8811604203569826318}
   _spreadRange: {x: 0.1, y: 0.1}
   _attackMask:
     serializedVersion: 2
     m_Bits: 4294967295
   _damage: 4
-  _shotCooldownTime: 1
+  _shotCooldownTime: 0.7
   _positionInHolder: {x: 0.12, y: -0.11, z: 0.52}
   _canHold: 0
+  _recoil: {fileID: -3478971870442402000}
+  _view: {fileID: 4693585950860712954}
   _shotsCount: 8
+--- !u!114 &-3478971870442402000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8384579714632414117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4cca8b84f5b4672aef3e0ffebad4c4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _kickbackSpeed: 2
+  _kickbackReturnSpeed: 1
+  _zOffset: 0.35
+  _recoilRange: {x: 5, y: 7}
 --- !u!114 &4693585950860712954
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -26,18 +26,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="964bf02c-bc4c-47dd-b461-5432e5d36519" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Extensions.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Extensions/Vector3Extensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Extensions/Vector3Extensions.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/ICameraAngles.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/ICameraAngles.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CourseWorkShooter/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CourseWorkShooter/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CourseWorkShooter/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CourseWorkShooter/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CourseWorkShooter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CourseWorkShooter/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Weapons/AK74.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Weapons/AK74.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Weapons/Bennelli_M4.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Weapons/Bennelli_M4.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputSystem/InputSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputSystem/InputSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputSystem/PlayerControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputSystem/PlayerControls.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputSystem/PlayerControls.inputactions" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputSystem/PlayerControls.inputactions.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InputSystem/PlayerInputSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InputSystem/PlayerInputSystem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerCamera.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/AssaultRifle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/AssaultRifle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Attack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Attack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/RaycastAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/RaycastAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Recoil.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Recoil.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Recoil.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Recoil.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Shotgun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Shotgun.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Weapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,8 +72,6 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/Health/Health.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponsWheelConfig.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/InputSystem/PlayerInputSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/InputSystem/InputSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ArrayExtensions.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponWheelItem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponWheelConfig.cs" />
@@ -67,15 +81,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/TrailViewData.cs" />
         <option value="$PROJECT_DIR$/Assets/README.txt" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Impact.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/RaycastAttack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/InputSystem/PlayerControls.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Weapon.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Shotgun.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/AssaultRifle.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerCam.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StateMachine/StateBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StateMachine/PlayerStates.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StateMachine/PlayerStateBehaviour.cs" />
@@ -86,9 +93,32 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/RunState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/AttackState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StateMachine/PlayerStateMachine.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerCamera.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponAnimation.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponAnimator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Animation/IWeaponAnimation.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Animation/ShotAnimation.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Animation/WeaponAnimator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Animation/RecoilAnimation.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Animation/Recoil.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/IPlayerComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/IPlayerComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/InputSystem/InputSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/InputSystem/PlayerInputSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Attack.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/RaycastAttack.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Extensions/Vector3Extensions.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/IRecoilAngles.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/ICameraAngles.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerCamera.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Weapon.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/AssaultRifle.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Shotgun.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Recoil.cs" />
       </list>
     </option>
   </component>
@@ -153,6 +183,17 @@
       <workItem from="1702543916516" duration="3349000" />
       <workItem from="1702560533857" duration="3997000" />
       <workItem from="1702645788503" duration="6553000" />
+      <workItem from="1703258219172" duration="7385000" />
+      <workItem from="1703415249284" duration="6000" />
+      <workItem from="1703415277931" duration="2029000" />
+      <workItem from="1703426853827" duration="4628000" />
+      <workItem from="1703602569675" duration="6214000" />
+      <workItem from="1703659973208" duration="1265000" />
+      <workItem from="1703775343358" duration="9902000" />
+      <workItem from="1703920756062" duration="17074000" />
+      <workItem from="1703998233996" duration="19151000" />
+      <workItem from="1704031088897" duration="6840000" />
+      <workItem from="1704108271647" duration="6313000" />
     </task>
     <servers />
   </component>
@@ -177,9 +218,13 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="143" key="RiderGenerateDialog" timestamp="1702201364048">
+    <state x="552" y="143" key="RiderGenerateDialog" timestamp="1704112914501">
       <screen x="0" y="0" width="1440" height="852" />
     </state>
-    <state x="552" y="143" key="RiderGenerateDialog/0.0.1440.852@0.0.1440.852" timestamp="1702201364048" />
+    <state x="552" y="143" key="RiderGenerateDialog/0.0.1440.852@0.0.1440.852" timestamp="1704112914501" />
+    <state x="93" y="93" width="1253" height="665" key="VCS.FileHistoryDialog" timestamp="1703927231042">
+      <screen x="0" y="0" width="1440" height="852" />
+    </state>
+    <state x="93" y="93" width="1253" height="665" key="VCS.FileHistoryDialog/0.0.1440.852@0.0.1440.852" timestamp="1703927231042" />
   </component>
 </project>

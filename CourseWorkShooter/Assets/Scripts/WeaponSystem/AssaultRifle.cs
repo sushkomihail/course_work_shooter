@@ -1,28 +1,22 @@
 ﻿using System.Collections;
+using Player;
 using UnityEngine;
 
 namespace WeaponSystem
 {
     public class AssaultRifle : Weapon
     {
-        public override void Initialize(Camera camera)
+        public override void Initialize(Transform cameraTransform, ICameraAngles cameraAngles)
         {
-            base.Initialize(camera);
+            base.Initialize(cameraTransform, cameraAngles);
             
-            _attack = new RaycastAttack(camera, _muzzle, _spreadRange, _attackMask, _damage);
+            _attack = new RaycastAttack(cameraTransform, _muzzle, _spreadRange, _attackMask, _damage);
         }
 
         public override IEnumerator PerformAttack()
         {
             _isReadyToShoot = false;
-            _attack.Perform();
-            _view.PlayTrail(_muzzle.position, _attack.HitPosition);
-
-            if (_attack.IsHit)
-            {
-                _view.PlayImpactParticles(_attack.HitPosition, _attack.HitNormal);
-            }
-            
+            Shoot();
             yield return new WaitForSeconds(_shotCooldownTime);
             _isReadyToShoot = true;
         }

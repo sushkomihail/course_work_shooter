@@ -128,6 +128,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4727400663055080544}
   - component: {fileID: 5097093629620742399}
+  - component: {fileID: 3367401886392955404}
   - component: {fileID: 4056871384153775954}
   m_Layer: 0
   m_Name: AK74
@@ -167,7 +168,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f21db36c0fa047dc84c9cbdb11ed00d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _view: {fileID: 4056871384153775954}
   _muzzle: {fileID: 4810250531658625510}
   _spreadRange: {x: 0.03, y: 0.03}
   _attackMask:
@@ -177,6 +177,24 @@ MonoBehaviour:
   _shotCooldownTime: 0.1
   _positionInHolder: {x: 0.15, y: -0.14, z: 0.52}
   _canHold: 1
+  _recoil: {fileID: 3367401886392955404}
+  _view: {fileID: 4056871384153775954}
+--- !u!114 &3367401886392955404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2636381002455645594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4cca8b84f5b4672aef3e0ffebad4c4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _kickbackSpeed: 3
+  _kickbackReturnSpeed: 2
+  _zOffset: 0.14
+  _recoilRange: {x: 1, y: 2}
 --- !u!114 &4056871384153775954
 MonoBehaviour:
   m_ObjectHideFlags: 0

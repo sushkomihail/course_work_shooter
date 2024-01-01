@@ -2,8 +2,10 @@
 
 public class GameManager : MonoBehaviour
 {
-    private void Start()
+    [SerializeField] private int _targetFps;
+    
+    private void Awake()
     {
-        
+        Application.targetFrameRate = _targetFps;
     }
 }
