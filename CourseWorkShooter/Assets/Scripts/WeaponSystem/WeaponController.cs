@@ -23,7 +23,7 @@ namespace WeaponSystem
             InstantiateWeapons(cameraAngles);
         }
         
-        public void Attack()
+        public void UpdateWeapon(MovementStates currentMovementState, Vector2 lookInputVector)
         {
             if (_isFireButtonPressed && CurrentWeapon.IsReadyToShoot)
             {
@@ -39,6 +39,8 @@ namespace WeaponSystem
             }
             
             CurrentWeapon.Recoil.UpdateKickback();
+            CurrentWeapon.Bobbing.Perform(currentMovementState);
+            CurrentWeapon.Sway.Perform(lookInputVector);
         }
 
         public void SetWeaponId(float mouseScroll)
@@ -60,7 +62,9 @@ namespace WeaponSystem
 
         private void InstantiateWeapons(ICameraAngles cameraAngles)
         {
-            List<Weapon> weaponPrefabs = _weaponWheelConfig.FindWeapons(new[] {0});
+            if (_weaponWheelConfig == null) return;
+            
+            Weapon[] weaponPrefabs = _weaponWheelConfig.Weapons;
 
             foreach (Weapon prefab in weaponPrefabs)
             {

@@ -4,12 +4,12 @@ using UnityEngine;
 
 namespace WeaponSystem
 {
-    public class Recoil : MonoBehaviour
+    public class WeaponRecoil : MonoBehaviour
     {
         [SerializeField] private float _kickbackSpeed = 3;
         [SerializeField] private float _kickbackReturnSpeed = 2;
-        [SerializeField] private float _zOffset;
-        [SerializeField] private Vector2 _recoilRange;
+        [SerializeField] private float _zOffset = 0.15f;
+        [SerializeField] private Vector2 _recoilRange = new Vector2(2, 2);
 
         private Vector3 _weaponPositionInHolder;
         private Vector3 _targetWeaponPosition;

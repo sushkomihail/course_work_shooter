@@ -30,25 +30,22 @@ namespace Player
             _movement.Initialize();
             _weaponController.Initialize(_camera);
 
-            _input.Controls.Player.Run.started += _ => _movement.OnRun(true);
-            _input.Controls.Player.Run.canceled += _ => _movement.OnRun(false);
-            _input.Controls.Player.Jump.performed += _ => _movement.OnJump();
-            _input.Controls.Player.Crouch.started += _ => _movement.OnCrouch(true);
-            _input.Controls.Player.Crouch.canceled += _ => _movement.OnCrouch(false);
+            _movement.HandleState(MovementStates.Idle);
             
-            _input.Controls.Player.ChangeWeapon.performed += context =>
+            _input.Controls.Player.Move.started += _ => _movement.HandleState(MovementStates.Walk);
+            _input.Controls.Player.Move.canceled += _ => _movement.HandleState(MovementStates.Idle);
+            _input.Controls.Player.Run.started += _ => _movement.HandleState(MovementStates.Run);
+            _input.Controls.Player.Run.canceled += _ => _movement.HandleState(MovementStates.Walk);
+            _input.Controls.Player.Jump.performed += _ => _movement.HandleState(MovementStates.Jump);
+            _input.Controls.Player.Crouch.performed += _ => _movement.HandleState(MovementStates.Crouch);
+
+            _input.Controls.Player.ChangeWeapon.started += context =>
             {
                 _weaponController.SetWeaponId(context.ReadValue<float>());
                 _weaponController.ChangeWeapon();
             };
-            _input.Controls.Player.Shoot.started += _ =>
-            {
-                OnShoot?.Invoke();
-            };
-            _input.Controls.Player.Shoot.canceled += _ =>
-            {
-                OnShootEnd?.Invoke();
-            };
+            _input.Controls.Player.Shoot.started += _ => OnShoot?.Invoke();
+            _input.Controls.Player.Shoot.canceled += _ => OnShootEnd?.Invoke();
         }
 
         private void OnEnable()
@@ -68,7 +65,7 @@ namespace Player
             
             _camera.Look(lookInputVector, _weaponController.CurrentWeapon.Recoil.CurrentCameraRotation);
             _movement.Move(moveInputVector);
-            _weaponController.Attack();
+            _weaponController.UpdateWeapon(_movement.CurrentState, lookInputVector);
         }
     }
 }

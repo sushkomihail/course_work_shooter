@@ -262,6 +262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _controller: {fileID: 794914341982658611}
+  _acceleration: 2
   _walkSpeed: 6
   _runSpeed: 9
   _jumpHeight: 2
@@ -269,8 +270,6 @@ MonoBehaviour:
   _defaultHeight: 2
   _crouchHeight: 1
   _crouchSpeed: 3
-  _crouchTime: 0.7
-  _smoothingRate: 0.25
 --- !u!114 &6555800731830567829
 MonoBehaviour:
   m_ObjectHideFlags: 0

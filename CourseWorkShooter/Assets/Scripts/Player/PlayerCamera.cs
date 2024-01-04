@@ -23,14 +23,14 @@ namespace Player
             PlayerController.OnShoot.AddListener(() => _xAngleBeforeShooting = _xAngle);
         }
 
-        public void Look(Vector2 lookVector, Vector3 recoilRotation)
+        public void Look(Vector2 lookInputVector, Vector3 recoilRotation)
         {
-            _xAngle -= lookVector.y * _xSensitivity * Time.deltaTime;
+            _xAngle -= lookInputVector.y * _xSensitivity * Time.deltaTime;
             _xAngle = Mathf.Clamp(_xAngle,
                 MinXAngle - recoilRotation.x,
                 MaxXAngle - recoilRotation.x);
         
-            _yAngle += lookVector.x * _ySensitivity * Time.deltaTime;
+            _yAngle += lookInputVector.x * _ySensitivity * Time.deltaTime;
             _yAngle = Mathf.Repeat(_yAngle, 360);
             
             transform.rotation = Quaternion.Euler(0, _yAngle, 0);
