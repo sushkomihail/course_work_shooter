@@ -4,13 +4,13 @@
     <e p="C:\Unity Projects\course_work_shooter\CourseWorkShooter" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="Configs" t="Include" />
+        <e p="Collections" t="Include" />
         <e p="Materials" t="Include">
           <e p="Effects" t="Include" />
           <e p="Weapons" t="Include" />
         </e>
         <e p="Models" t="Include">
-          <e p="Character" t="Include">
+          <e p="Characters" t="Include">
             <e p="SkuFISH" t="Include">
               <e p="CartoonShader.shader" t="Include" />
             </e>
@@ -18,18 +18,37 @@
           <e p="Weapons" t="Include" />
         </e>
         <e p="Prefabs" t="Include">
+          <e p="Characters" t="Include" />
           <e p="Particles" t="Include" />
           <e p="Weapons" t="Include" />
         </e>
         <e p="ProBuilder Data" t="Include" />
         <e p="README.txt" t="Include" />
-        <e p="Scenes" t="Include" />
+        <e p="Scenes" t="Include">
+          <e p="SampleScene" t="Include" />
+        </e>
         <e p="Scripts" t="Include">
+          <e p="AttackSystem" t="Include">
+            <e p="Attack.cs" t="Include" />
+            <e p="Projectile.cs" t="Include" />
+            <e p="ProjectileAttack.cs" t="Include" />
+            <e p="RaycastAttack.cs" t="Include" />
+          </e>
+          <e p="Chest" t="Include">
+            <e p="ChestController.cs" t="Include" />
+          </e>
+          <e p="EnemySystem" t="Include">
+            <e p="EnemiesCollection.cs" t="Include" />
+            <e p="EnemyAttackController.cs" t="Include" />
+            <e p="EnemyController.cs" t="Include" />
+            <e p="EnemyMovement.cs" t="Include" />
+            <e p="EnemyVision.cs" t="Include" />
+          </e>
           <e p="Extensions" t="Include">
             <e p="Vector3Extensions.cs" t="Include" />
           </e>
           <e p="GameManager.cs" t="Include" />
-          <e p="Health" t="Include">
+          <e p="HealthSystem" t="Include">
             <e p="Health.cs" t="Include" />
           </e>
           <e p="InputSystem" t="Include">
@@ -37,27 +56,30 @@
             <e p="PlayerControls.cs" t="Include" />
             <e p="PlayerInputSystem.cs" t="Include" />
           </e>
-          <e p="MovementStates.cs" t="Include" />
           <e p="Player" t="Include">
             <e p="ICameraAngles.cs" t="Include" />
+            <e p="MovementStates.cs" t="Include" />
             <e p="PlayerCamera.cs" t="Include" />
             <e p="PlayerController.cs" t="Include" />
             <e p="PlayerMovement.cs" t="Include" />
           </e>
+          <e p="SpawnSystem" t="Include">
+            <e p="SpawnController.cs" t="Include" />
+            <e p="Wave.cs" t="Include" />
+            <e p="WaveType.cs" t="Include" />
+          </e>
           <e p="WeaponSystem" t="Include">
             <e p="AssaultRifle.cs" t="Include" />
-            <e p="Attack.cs" t="Include" />
             <e p="Impact.cs" t="Include" />
-            <e p="RaycastAttack.cs" t="Include" />
             <e p="Shotgun.cs" t="Include" />
             <e p="Trail.cs" t="Include" />
             <e p="Weapon.cs" t="Include" />
             <e p="WeaponBobbing.cs" t="Include" />
             <e p="WeaponController.cs" t="Include" />
             <e p="WeaponRecoil.cs" t="Include" />
+            <e p="WeaponsCollection.cs" t="Include" />
             <e p="WeaponSway.cs" t="Include" />
             <e p="WeaponView.cs" t="Include" />
-            <e p="WeaponWheelConfig.cs" t="Include" />
           </e>
         </e>
         <e p="Sounds" t="Include">

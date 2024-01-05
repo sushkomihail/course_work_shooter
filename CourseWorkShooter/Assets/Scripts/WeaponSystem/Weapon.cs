@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using AttackSystem;
 using Player;
 using UnityEngine;
 
@@ -20,7 +21,7 @@ namespace WeaponSystem
 
         protected Attack _attack;
         protected bool _isReadyToShoot = true;
-
+        
         public WeaponRecoil Recoil => _recoil;
         public WeaponBobbing Bobbing => _bobbing;
         public WeaponSway Sway => _sway;
@@ -33,6 +34,8 @@ namespace WeaponSystem
             transform.localPosition = _positionInHolder;
             _recoil.Initialize(_positionInHolder, cameraAngles);
         }
+
+        public virtual void Initialize() {}
 
         public abstract IEnumerator PerformAttack();
 

@@ -148,7 +148,7 @@ Transform:
   m_GameObject: {fileID: 2636381002455645594}
   serializedVersion: 2
   m_LocalRotation: {x: -2.8139645e-22, y: 9.501085e-22, z: 9.501085e-22, w: 1}
-  m_LocalPosition: {x: 0.009672593, y: -0.004909615, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -175,7 +175,7 @@ MonoBehaviour:
   _attackMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  _damage: 3
+  _damage: 7
   _shotCooldownTime: 0.1
   _positionInHolder: {x: 0.15, y: -0.14, z: 0.52}
   _canHold: 1

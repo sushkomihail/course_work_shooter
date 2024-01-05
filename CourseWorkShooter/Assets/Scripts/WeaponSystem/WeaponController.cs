@@ -7,14 +7,13 @@ namespace WeaponSystem
     public class WeaponController : MonoBehaviour
     {
         [SerializeField] private Transform _cameraTransform;
-        [SerializeField] private WeaponWheelConfig _weaponWheelConfig;
+        [SerializeField] private WeaponsCollection weaponsCollection;
 
-        private readonly List<Weapon> _weapons = new List<Weapon>();
+        private readonly List<Weapon> _playerWeapons = new List<Weapon>();
+        private Weapon _currentWeapon;
         private int _weaponId;
 
         private bool _isFireButtonPressed;
-        
-        public Weapon CurrentWeapon { get; private set; }
 
         public void Initialize(ICameraAngles cameraAngles)
         {
@@ -25,22 +24,22 @@ namespace WeaponSystem
         
         public void UpdateWeapon(MovementStates currentMovementState, Vector2 lookInputVector)
         {
-            if (_isFireButtonPressed && CurrentWeapon.IsReadyToShoot)
+            if (_isFireButtonPressed && _currentWeapon.IsReadyToShoot)
             {
-                StartCoroutine(CurrentWeapon.PerformAttack());
-                CurrentWeapon.Recoil.SetKickbackParameters();
-                CurrentWeapon.View.PlayMuzzleFlashParticles();
-                CurrentWeapon.View.PlayShootSound();
+                StartCoroutine(_currentWeapon.PerformAttack());
+                _currentWeapon.Recoil.SetKickbackParameters();
+                _currentWeapon.View.PlayMuzzleFlashParticles();
+                _currentWeapon.View.PlayShootSound();
 
-                if (!CurrentWeapon.CanHold)
+                if (!_currentWeapon.CanHold)
                 {
                     _isFireButtonPressed = false;
                 }
             }
             
-            CurrentWeapon.Recoil.UpdateKickback();
-            CurrentWeapon.Bobbing.Perform(currentMovementState);
-            CurrentWeapon.Sway.Perform(lookInputVector);
+            _currentWeapon.Recoil.UpdateKickback();
+            _currentWeapon.Bobbing.Perform(currentMovementState);
+            _currentWeapon.Sway.Perform(lookInputVector);
         }
 
         public void SetWeaponId(float mouseScroll)
@@ -48,34 +47,34 @@ namespace WeaponSystem
             if (mouseScroll > 0) _weaponId += 1;
             else _weaponId -= 1;
 
-            _weaponId %= _weapons.Count;
+            _weaponId %= _playerWeapons.Count;
 
-            if (_weaponId < 0) _weaponId += _weapons.Count;
+            if (_weaponId < 0) _weaponId += _playerWeapons.Count;
         }
 
         public void ChangeWeapon()
         {
-            CurrentWeapon.gameObject.SetActive(false);
-            CurrentWeapon = _weapons[_weaponId];
-            CurrentWeapon.gameObject.SetActive(true);
+            _currentWeapon.gameObject.SetActive(false);
+            _currentWeapon = _playerWeapons[_weaponId];
+            _currentWeapon.gameObject.SetActive(true);
         }
 
         private void InstantiateWeapons(ICameraAngles cameraAngles)
         {
-            if (_weaponWheelConfig == null) return;
+            if (weaponsCollection == null) return;
             
-            Weapon[] weaponPrefabs = _weaponWheelConfig.Weapons;
+            Weapon[] weaponPrefabs = weaponsCollection.Weapons;
 
             foreach (Weapon prefab in weaponPrefabs)
             {
                 Weapon weapon = Instantiate(prefab, _cameraTransform);
                 weapon.Initialize(_cameraTransform, cameraAngles);
                 weapon.gameObject.SetActive(false);
-                _weapons.Add(weapon);
+                _playerWeapons.Add(weapon);
             }
 
-            CurrentWeapon = _weapons[0];
-            CurrentWeapon.gameObject.SetActive(true);
+            _currentWeapon = _playerWeapons[0];
+            _currentWeapon.gameObject.SetActive(true);
         }
     }
 }

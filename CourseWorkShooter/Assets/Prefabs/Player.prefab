@@ -283,7 +283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cameraTransform: {fileID: 505637421860786685}
-  _weaponWheelConfig: {fileID: 11400000, guid: 8412a2cf979c0bd4d95c43a24b14fd94, type: 2}
+  weaponsCollection: {fileID: 11400000, guid: 8412a2cf979c0bd4d95c43a24b14fd94, type: 2}
 --- !u!1 &7380201326291802391
 GameObject:
   m_ObjectHideFlags: 0

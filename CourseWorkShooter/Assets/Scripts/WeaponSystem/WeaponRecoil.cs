@@ -21,12 +21,11 @@ namespace WeaponSystem
         
         private float _recoilSpeed;
         private float _recoilFraction;
-        
-        public Vector3 CurrentCameraRotation { get; private set; }
 
         public void Initialize(Vector3 weaponPositionInHolder, ICameraAngles cameraAngles)
         {
             _weaponPositionInHolder = weaponPositionInHolder;
+            _currentWeaponPosition = _weaponPositionInHolder;
             _cameraAngles = cameraAngles;
             PlayerController.OnShootEnd.AddListener(SetRecoilReturnParameters);
         }
@@ -42,9 +41,13 @@ namespace WeaponSystem
             }
 
             _recoilFraction += _recoilSpeed * Time.deltaTime;
-            CurrentCameraRotation = Vector3.Lerp(CurrentCameraRotation, _targetCameraRotation, _recoilFraction);
+            
             _currentWeaponPosition = Vector3.Lerp(_currentWeaponPosition, _targetWeaponPosition, _recoilFraction);
             transform.localPosition = _currentWeaponPosition;
+            
+            Vector3 recoilAngles = _cameraAngles.RecoilAngles;
+            recoilAngles = Vector3.Lerp(recoilAngles, _targetCameraRotation, _recoilFraction);
+            _cameraAngles.SetRecoilAngles(recoilAngles);
         }
 
         public void SetKickbackParameters()

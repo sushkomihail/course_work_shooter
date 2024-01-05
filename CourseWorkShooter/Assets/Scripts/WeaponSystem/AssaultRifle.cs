@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using AttackSystem;
 using Player;
 using UnityEngine;
 
@@ -9,8 +10,13 @@ namespace WeaponSystem
         public override void Initialize(Transform cameraTransform, ICameraAngles cameraAngles)
         {
             base.Initialize(cameraTransform, cameraAngles);
-            
+
             _attack = new RaycastAttack(cameraTransform, _muzzle, _spreadRange, _attackMask, _damage);
+        }
+
+        public override void Initialize()
+        {
+            _attack = new RaycastAttack(transform, _muzzle, _spreadRange, _attackMask, _damage);
         }
 
         public override IEnumerator PerformAttack()

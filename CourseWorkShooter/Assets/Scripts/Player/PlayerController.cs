@@ -12,18 +12,15 @@ namespace Player
         [SerializeField] private PlayerMovement _movement;
         [SerializeField] private WeaponController _weaponController;
 
+        public static readonly UnityEvent OnShoot = new UnityEvent();
+        public static readonly UnityEvent OnShootEnd = new UnityEvent();
+        
         private Vector2 _currentMoveInputVector;
-
-        public static UnityEvent OnShoot;
-        public static UnityEvent OnShootEnd;
 
         private void Awake()
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-            
-            OnShoot = new UnityEvent();
-            OnShootEnd = new UnityEvent();
             
             _input.Initialize();
             _camera.Initialize();
@@ -63,7 +60,7 @@ namespace Player
             Vector2 lookInputVector = _input.Controls.Player.Look.ReadValue<Vector2>();
             Vector2 moveInputVector = _input.Controls.Player.Move.ReadValue<Vector2>();
             
-            _camera.Look(lookInputVector, _weaponController.CurrentWeapon.Recoil.CurrentCameraRotation);
+            _camera.Look(lookInputVector);
             _movement.Move(moveInputVector);
             _weaponController.UpdateWeapon(_movement.CurrentState, lookInputVector);
         }

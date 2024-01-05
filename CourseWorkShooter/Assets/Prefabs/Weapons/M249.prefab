@@ -539,8 +539,8 @@ MonoBehaviour:
   _spreadRange: {x: 0.04, y: 0.04}
   _attackMask:
     serializedVersion: 2
-    m_Bits: 0
-  _damage: 20
+    m_Bits: 4294967295
+  _damage: 9
   _shotCooldownTime: 0.06
   _positionInHolder: {x: 0.21, y: -0.31, z: 0.81}
   _canHold: 1
@@ -563,7 +563,7 @@ MonoBehaviour:
   _kickbackSpeed: 3
   _kickbackReturnSpeed: 2
   _zOffset: 0.15
-  _recoilRange: {x: 2, y: 4}
+  _recoilRange: {x: 2, y: 3.2}
 --- !u!114 &8707000083469929914
 MonoBehaviour:
   m_ObjectHideFlags: 0
