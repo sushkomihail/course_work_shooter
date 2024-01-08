@@ -1,3 +1,4 @@
+using HealthSystem;
 using InputSystem;
 using UnityEngine;
 using UnityEngine.Events;
@@ -11,6 +12,7 @@ namespace Player
         [SerializeField] private PlayerCamera _camera;
         [SerializeField] private PlayerMovement _movement;
         [SerializeField] private WeaponController _weaponController;
+        [SerializeField] private PlayerHealth _health;
 
         public static readonly UnityEvent OnShoot = new UnityEvent();
         public static readonly UnityEvent OnShootEnd = new UnityEvent();
@@ -26,6 +28,7 @@ namespace Player
             _camera.Initialize();
             _movement.Initialize();
             _weaponController.Initialize(_camera);
+            _health.Initialize();
 
             _movement.HandleState(MovementStates.Idle);
             

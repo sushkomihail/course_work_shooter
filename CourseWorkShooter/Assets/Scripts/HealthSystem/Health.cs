@@ -1,17 +1,16 @@
-﻿using SpawnSystem;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace HealthSystem
 {
     public abstract class Health : MonoBehaviour
     {
-        [SerializeField] protected int _maxHealth;
+        [SerializeField] protected int _maxHealth = 100;
         
-        protected int _currentHealth;
+        protected float _currentHealth;
 
         public bool IsDied { get; protected set; }
 
-        private void Awake()
+        public virtual void Initialize()
         {
             _currentHealth = _maxHealth;
         }

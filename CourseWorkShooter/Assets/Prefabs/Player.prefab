@@ -109,6 +109,7 @@ GameObject:
   - component: {fileID: 1677780120065371156}
   - component: {fileID: 2400017139035066097}
   - component: {fileID: 6555800731830567829}
+  - component: {fileID: 1034292759513343242}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -224,6 +225,7 @@ MonoBehaviour:
   _camera: {fileID: 1677780120065371156}
   _movement: {fileID: 2400017139035066097}
   _weaponController: {fileID: 6555800731830567829}
+  _health: {fileID: 1034292759513343242}
 --- !u!114 &8992006943186085446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,6 +286,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cameraTransform: {fileID: 505637421860786685}
   weaponsCollection: {fileID: 11400000, guid: 8412a2cf979c0bd4d95c43a24b14fd94, type: 2}
+--- !u!114 &1034292759513343242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4925979886651638410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27ea06cc28ed481faa4cf358ce7b2250, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 100
+  _maxArmor: 50
+  _recoveryCooldownTime: 4
+  _recoverySpeed: 3
 --- !u!1 &7380201326291802391
 GameObject:
   m_ObjectHideFlags: 0

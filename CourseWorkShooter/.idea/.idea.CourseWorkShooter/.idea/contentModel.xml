@@ -35,7 +35,6 @@
         <e p="Scripts" t="Include">
           <e p="AttackSystem" t="Include">
             <e p="Attack.cs" t="Include" />
-            <e p="Projectile.cs" t="Include" />
             <e p="RaycastAttack.cs" t="Include" />
           </e>
           <e p="Chest" t="Include">
@@ -57,6 +56,7 @@
             <e p="ChestHealth.cs" t="Include" />
             <e p="EnemyHealth.cs" t="Include" />
             <e p="Health.cs" t="Include" />
+            <e p="PLayerHealth.cs" t="Include" />
           </e>
           <e p="InputSystem" t="Include">
             <e p="InputSystem.cs" t="Include" />
@@ -74,6 +74,9 @@
             <e p="SpawnController.cs" t="Include" />
             <e p="Wave.cs" t="Include" />
             <e p="WaveType.cs" t="Include" />
+          </e>
+          <e p="UI" t="Include">
+            <e p="Billboard.cs" t="Include" />
           </e>
           <e p="WeaponSystem" t="Include">
             <e p="AssaultRifle.cs" t="Include" />

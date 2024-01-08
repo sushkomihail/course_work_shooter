@@ -8,7 +8,7 @@ namespace Chest
         [SerializeField] private Transform _model;
         [SerializeField] private AnimationCurve _shakeCurve;
         [SerializeField] private float _duration;
-        [SerializeField] private float _speed = 3;
+        [SerializeField] private float _speed = 2;
         [SerializeField] private Vector3 _shakeRange = new Vector3(10, 10, 10);
         
         private Vector3 _targetAngles;
@@ -17,6 +17,8 @@ namespace Chest
         
         public void Shake()
         {
+            if (_currentAngles.IsComparableWith(Vector3.zero) && _elapsedTime != 0) return;
+            
             _elapsedTime += _speed * Time.deltaTime;
             float shakeAnglesFraction = _elapsedTime / _duration;
             _currentAngles = _targetAngles * _shakeCurve.Evaluate(shakeAnglesFraction);

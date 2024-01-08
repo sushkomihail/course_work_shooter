@@ -318,7 +318,7 @@ GameObject:
   - component: {fileID: 6366743230350159477}
   - component: {fileID: 6255880666549961534}
   - component: {fileID: 8381352787917874237}
-  - component: {fileID: 3469679179680537580}
+  - component: {fileID: 3881613647583155280}
   - component: {fileID: 5176828556796890734}
   - component: {fileID: 3025216614434339198}
   m_Layer: 6
@@ -404,6 +404,7 @@ MonoBehaviour:
   _vision: {fileID: 6366743230350159477}
   _movement: {fileID: 6255880666549961534}
   _attackController: {fileID: 8381352787917874237}
+  _health: {fileID: 3881613647583155280}
 --- !u!114 &6366743230350159477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -433,7 +434,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6583406302c349b6b5d9f2398fa07e61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _height: 2
   _animator: {fileID: 7327196876694739247}
   _transitionalValue: 0.5
   _agent: {fileID: 2875915883070691151}
@@ -453,7 +453,7 @@ MonoBehaviour:
   _aimingTarget: {fileID: 4744811873221415730}
   _weapon: {fileID: 2685088952516440840}
   _attackDistance: 5
---- !u!114 &3469679179680537580
+--- !u!114 &3881613647583155280
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -462,7 +462,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2129960975918485001}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea99b0632fd1447fada4d46111547132, type: 3}
+  m_Script: {fileID: 11500000, guid: d92c3a5d1d084b07bce9b0e8386864a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 100

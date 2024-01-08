@@ -13,17 +13,13 @@ namespace HealthSystem
         
         public override void TakeDamage(int damage)
         {
-            _currentHealth -= damage;
             _shaker.SetUpShakeVariables();
+            _currentHealth -= damage;
 
             if (_currentHealth <= 0)
             {
+                GameManager.Instance.EndGame();
             }
-        }
-
-        private void OnTakeDamege()
-        {
-            
         }
     }
 }

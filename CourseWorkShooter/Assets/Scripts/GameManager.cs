@@ -1,21 +1,32 @@
 ﻿using UnityEngine;
-using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private int _targetFps;
-    
-    public static UnityEvent OnGameEnd = new UnityEvent();
-    
+    [SerializeField] private GameObject _gameUi;
+    [SerializeField] private GameObject _resultsWindow;
+
+    public static GameManager Instance;
+
     private void Awake()
     {
-        Application.targetFrameRate = _targetFps;
+        if (Instance == null)
+        {
+            Instance = this;
+        }
         
-        OnGameEnd.AddListener(End);
+        Application.targetFrameRate = _targetFps;
     }
 
-    private void End()
+    public void EndGame()
     {
-        
+        StopAllCoroutines();
+        ShowGameResults();
+    }
+
+    private void ShowGameResults()
+    {
+        _gameUi.SetActive(false);
+        _resultsWindow.SetActive(true);
     }
 }
