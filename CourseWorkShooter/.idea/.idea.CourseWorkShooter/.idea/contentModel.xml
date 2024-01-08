@@ -18,6 +18,9 @@
           <e p="Weapons" t="Include" />
         </e>
         <e p="Models" t="Include">
+          <e p="Character" t="Include">
+            <e p="SkuFISH" t="Include" />
+          </e>
           <e p="Characters" t="Include">
             <e p="Fish" t="Include" />
           </e>
