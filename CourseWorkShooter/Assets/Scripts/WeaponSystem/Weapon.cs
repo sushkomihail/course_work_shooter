@@ -38,6 +38,7 @@ namespace WeaponSystem
         public virtual void Initialize() {}
 
         public abstract IEnumerator PerformAttack();
+        public abstract IEnumerator PerformAttack(Transform target);
 
         protected void Shoot()
         {
@@ -48,6 +49,12 @@ namespace WeaponSystem
             {
                 _view.PlayImpactParticles(_attack.HitPosition, _attack.HitNormal);
             }
+        }
+        
+        protected void Shoot(Transform target)
+        {
+            _attack.Perform(target);
+            _view.PlayTrail(_muzzle.position, _attack.HitPosition);
         }
     }
 }

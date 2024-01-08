@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using EnemySystem;
+using Enemy;
 
 namespace SpawnSystem
 {

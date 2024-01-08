@@ -7,24 +7,43 @@ namespace AttackSystem
     {
         private readonly LayerMask _attackMask;
         private readonly Transform _cameraTransform;
-        private readonly Transform _rayOrigin;
+        private readonly Transform _muzzle;
         private readonly Vector2 _spreadRange;
 
-        public RaycastAttack(Transform cameraTransform, Transform rayOrigin, Vector2 spreadRange,
+        public RaycastAttack(Transform cameraTransform, Transform muzzle, Vector2 spreadRange,
             LayerMask attackMask, int damage) : base(damage)
         {
             _attackMask = attackMask;
             _cameraTransform = cameraTransform;
             _spreadRange = spreadRange;
-            _rayOrigin = rayOrigin;
+            _muzzle = muzzle;
+        }
+        
+        public RaycastAttack(Transform muzzle, Vector2 spreadRange,
+            LayerMask attackMask, int damage) : base(damage)
+        {
+            _attackMask = attackMask;
+            _spreadRange = spreadRange;
+            _muzzle = muzzle;
         }
 
         public override void Perform()
         {
             CalculateHitPosition(_cameraTransform, _spreadRange);
-            Vector3 directionToTarget = HitPosition - _rayOrigin.position;
+            CastRay();
+        }
 
-            if (Physics.Raycast(_rayOrigin.position, directionToTarget, out RaycastHit hit,
+        public override void Perform(Transform target)
+        {
+            CalculateHitPosition(_muzzle, target, _spreadRange);
+            CastRay();
+        }
+
+        private void CastRay()
+        {
+            Vector3 directionToTarget = HitPosition - _muzzle.position;
+
+            if (Physics.Raycast(_muzzle.position, directionToTarget, out RaycastHit hit,
                 directionToTarget.magnitude, _attackMask.value))
             {
                 if (!hit.transform.root.TryGetComponent(out Health health)) return;

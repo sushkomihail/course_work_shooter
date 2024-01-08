@@ -17,16 +17,35 @@ namespace AttackSystem
         {
             _damage = damage;
         }
-        
+
         public abstract void Perform();
+        public abstract void Perform(Transform target);
         
-        protected void CalculateHitPosition(Transform cameraTransform, Vector2 spreadRange)
+        protected void CalculateHitPosition(Transform rayOrigin, Vector2 spreadRange)
         {
             Vector3 spread = CalculateSpread(spreadRange);
-            Vector3 rayDirection = cameraTransform.forward + 
-                                   cameraTransform.right * spread.x + 
-                                   cameraTransform.up * spread.y;
-            Ray ray = new Ray(cameraTransform.position, rayDirection);
+
+            Vector3 rayDirection = rayOrigin.forward + 
+                                   rayOrigin.right * spread.x + 
+                                   rayOrigin.up * spread.y;
+            
+            CastRay(rayOrigin.position, rayDirection);
+        }
+        
+        protected void CalculateHitPosition(Transform rayOrigin, Transform target, Vector2 spreadRange)
+        {
+            Vector3 spread = CalculateSpread(spreadRange);
+
+            Vector3 rayDirection = target.position - rayOrigin.position;
+            rayDirection.x += spread.x;
+            rayDirection.y += spread.y;
+            
+            CastRay(rayOrigin.position, rayDirection);
+        }
+
+        private void CastRay(Vector3 originPosition, Vector3 rayDirection)
+        {
+            Ray ray = new Ray(originPosition, rayDirection);
             
             if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity))
             {
@@ -37,7 +56,7 @@ namespace AttackSystem
             }
 
             IsHit = false;
-            HitPosition = cameraTransform.position + rayDirection * RayDistanceWithoutHit;
+            HitPosition = originPosition + rayDirection * RayDistanceWithoutHit;
         }
         
         private Vector3 CalculateSpread(Vector2 spreadRange)

@@ -16,13 +16,21 @@ namespace WeaponSystem
 
         public override void Initialize()
         {
-            _attack = new RaycastAttack(transform, _muzzle, _spreadRange, _attackMask, _damage);
+            _attack = new RaycastAttack(_muzzle, _spreadRange, _attackMask, _damage);
         }
 
         public override IEnumerator PerformAttack()
         {
             _isReadyToShoot = false;
             Shoot();
+            yield return new WaitForSeconds(_shotCooldownTime);
+            _isReadyToShoot = true;
+        }
+        
+        public override IEnumerator PerformAttack(Transform target)
+        {
+            _isReadyToShoot = false;
+            Shoot(target);
             yield return new WaitForSeconds(_shotCooldownTime);
             _isReadyToShoot = true;
         }

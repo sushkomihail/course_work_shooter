@@ -33,5 +33,18 @@ namespace WeaponSystem
             yield return new WaitForSeconds(_shotCooldownTime);
             _isReadyToShoot = true;
         }
+
+        public override IEnumerator PerformAttack(Transform target)
+        {
+            _isReadyToShoot = false;
+            
+            for (int i = 0; i < _shotsCount; i++)
+            {
+                Shoot(target);
+            }
+            
+            yield return new WaitForSeconds(_shotCooldownTime);
+            _isReadyToShoot = true;
+        }
     }
 }

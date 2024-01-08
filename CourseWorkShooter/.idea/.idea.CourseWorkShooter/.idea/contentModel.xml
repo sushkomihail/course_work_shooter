@@ -4,16 +4,22 @@
     <e p="C:\Unity Projects\course_work_shooter\CourseWorkShooter" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="Collections" t="Include" />
+        <e p="Animation" t="Include">
+          <e p="Fish" t="Include" />
+        </e>
+        <e p="Configs" t="Include">
+          <e p="URP" t="Include" />
+        </e>
         <e p="Materials" t="Include">
+          <e p="Characters" t="Include">
+            <e p="Fish" t="Include" />
+          </e>
           <e p="Effects" t="Include" />
           <e p="Weapons" t="Include" />
         </e>
         <e p="Models" t="Include">
           <e p="Characters" t="Include">
-            <e p="SkuFISH" t="Include">
-              <e p="CartoonShader.shader" t="Include" />
-            </e>
+            <e p="Fish" t="Include" />
           </e>
           <e p="Weapons" t="Include" />
         </e>
@@ -22,22 +28,21 @@
           <e p="Particles" t="Include" />
           <e p="Weapons" t="Include" />
         </e>
-        <e p="ProBuilder Data" t="Include" />
         <e p="README.txt" t="Include" />
         <e p="Scenes" t="Include">
-          <e p="SampleScene" t="Include" />
+          <e p="Game" t="Include" />
         </e>
         <e p="Scripts" t="Include">
           <e p="AttackSystem" t="Include">
             <e p="Attack.cs" t="Include" />
             <e p="Projectile.cs" t="Include" />
-            <e p="ProjectileAttack.cs" t="Include" />
             <e p="RaycastAttack.cs" t="Include" />
           </e>
           <e p="Chest" t="Include">
             <e p="ChestController.cs" t="Include" />
+            <e p="ChestShaker.cs" t="Include" />
           </e>
-          <e p="EnemySystem" t="Include">
+          <e p="Enemy" t="Include">
             <e p="EnemiesCollection.cs" t="Include" />
             <e p="EnemyAttackController.cs" t="Include" />
             <e p="EnemyController.cs" t="Include" />
@@ -49,6 +54,8 @@
           </e>
           <e p="GameManager.cs" t="Include" />
           <e p="HealthSystem" t="Include">
+            <e p="ChestHealth.cs" t="Include" />
+            <e p="EnemyHealth.cs" t="Include" />
             <e p="Health.cs" t="Include" />
           </e>
           <e p="InputSystem" t="Include">
@@ -82,12 +89,52 @@
             <e p="WeaponView.cs" t="Include" />
           </e>
         </e>
+        <e p="Shaders" t="Include" />
         <e p="Sounds" t="Include">
           <e p="Bullets" t="Include" />
           <e p="Impacts" t="Include" />
           <e p="Weapon" t="Include" />
         </e>
+        <e p="TextMesh Pro" t="Include">
+          <e p="Documentation" t="Include" />
+          <e p="Fonts" t="Include">
+            <e p="LiberationSans - OFL.txt" t="Include" />
+          </e>
+          <e p="Resources" t="Include">
+            <e p="Fonts &amp; Materials" t="Include" />
+            <e p="LineBreaking Following Characters.txt" t="Include" />
+            <e p="LineBreaking Leading Characters.txt" t="Include" />
+            <e p="Sprite Assets" t="Include" />
+            <e p="Style Sheets" t="Include" />
+          </e>
+          <e p="Shaders" t="Include">
+            <e p="TMP_Bitmap-Custom-Atlas.shader" t="Include" />
+            <e p="TMP_Bitmap-Mobile.shader" t="Include" />
+            <e p="TMP_Bitmap.shader" t="Include" />
+            <e p="TMP_SDF Overlay.shader" t="Include" />
+            <e p="TMP_SDF SSD.shader" t="Include" />
+            <e p="TMP_SDF-Mobile Masking.shader" t="Include" />
+            <e p="TMP_SDF-Mobile Overlay.shader" t="Include" />
+            <e p="TMP_SDF-Mobile SSD.shader" t="Include" />
+            <e p="TMP_SDF-Mobile.shader" t="Include" />
+            <e p="TMP_SDF-Surface-Mobile.shader" t="Include" />
+            <e p="TMP_SDF-Surface.shader" t="Include" />
+            <e p="TMP_SDF.shader" t="Include" />
+            <e p="TMP_Sprite.shader" t="Include" />
+            <e p="TMPro.cginc" t="Include" />
+            <e p="TMPro_Mobile.cginc" t="Include" />
+            <e p="TMPro_Properties.cginc" t="Include" />
+            <e p="TMPro_Surface.cginc" t="Include" />
+          </e>
+          <e p="Sprites" t="Include">
+            <e p="EmojiOne Attribution.txt" t="Include" />
+            <e p="EmojiOne.json" t="Include" />
+          </e>
+        </e>
         <e p="Textures" t="Include">
+          <e p="Characters" t="Include">
+            <e p="Fish" t="Include" />
+          </e>
           <e p="Effects" t="Include" />
           <e p="Weapons" t="Include" />
         </e>

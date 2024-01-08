@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using EnemySystem;
+using Enemy;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -31,9 +31,7 @@ namespace SpawnSystem
             
             foreach (Transform point in _spawnPoints)
             {
-                EnemyController enemyPrefab = _collection.NextEnemy;
-                Vector3 spawnPosition = point.position + point.up * enemyPrefab.SpawnYOffset;
-                EnemyController enemy = Instantiate(enemyPrefab, spawnPosition, point.rotation);
+                EnemyController enemy = Instantiate(_collection.NextEnemy, point.position, point.rotation);
                 _enemiesOnScene.Add(enemy);
             }
         }

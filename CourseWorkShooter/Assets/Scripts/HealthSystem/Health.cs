@@ -3,28 +3,19 @@ using UnityEngine;
 
 namespace HealthSystem
 {
-    public class Health : MonoBehaviour
+    public abstract class Health : MonoBehaviour
     {
-        [SerializeField] private int _maxHealth;
-
-        public bool IsDied { get; private set; }
+        [SerializeField] protected int _maxHealth;
         
-        private int _currentHealth;
+        protected int _currentHealth;
+
+        public bool IsDied { get; protected set; }
 
         private void Awake()
         {
             _currentHealth = _maxHealth;
         }
 
-        public void TakeDamage(int damage)
-        {
-            _currentHealth -= damage;
-
-            if (_currentHealth <= 0)
-            {
-                IsDied = true;
-                SpawnController.OnEnemyDeath.Invoke(gameObject);
-            }
-        }
+        public abstract void TakeDamage(int damage);
     }
 }
