@@ -197,6 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _kickbackSpeed: 3
   _kickbackReturnSpeed: 2
+  _recoilReturnSpeed: 0.7
   _zOffset: 0.14
   _recoilRange: {x: 1, y: 2}
 --- !u!114 &7265023781643416953

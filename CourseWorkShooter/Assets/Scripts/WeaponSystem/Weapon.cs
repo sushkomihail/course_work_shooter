@@ -29,10 +29,10 @@ namespace WeaponSystem
         public bool IsReadyToShoot => _isReadyToShoot;
         public bool CanHold => _canHold;
 
-        public virtual void Initialize(Transform cameraTransform, ICameraAngles cameraAngles)
+        public virtual void Initialize(Transform cameraTransform, IRecoilControlAngles recoilControlAngles)
         {
             transform.localPosition = _positionInHolder;
-            _recoil.Initialize(_positionInHolder, cameraAngles);
+            _recoil.Initialize(_positionInHolder, recoilControlAngles);
         }
 
         public virtual void Initialize() {}

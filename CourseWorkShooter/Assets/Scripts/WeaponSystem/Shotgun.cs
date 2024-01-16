@@ -7,11 +7,11 @@ namespace WeaponSystem
 {
     public class Shotgun : Weapon
     {
-        [SerializeField] private int _shotsCount;
+        [SerializeField] private int _shotsCount = 8;
         
-        public override void Initialize(Transform cameraTransform, ICameraAngles cameraAngles)
+        public override void Initialize(Transform cameraTransform, IRecoilControlAngles recoilControlAngles)
         {
-            base.Initialize(cameraTransform, cameraAngles);
+            base.Initialize(cameraTransform, recoilControlAngles);
 
             _attack = new RaycastAttack(cameraTransform, _muzzle, _spreadRange, _attackMask, _damage);
         }

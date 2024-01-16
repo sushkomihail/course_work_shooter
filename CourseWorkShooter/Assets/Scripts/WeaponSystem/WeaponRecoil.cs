@@ -8,6 +8,8 @@ namespace WeaponSystem
     {
         [SerializeField] private float _kickbackSpeed = 3;
         [SerializeField] private float _kickbackReturnSpeed = 2;
+        [SerializeField] private float _recoilSpeed = 3;
+        [SerializeField] private float _recoilReturnSpeed = 0.7f;
         [SerializeField] private float _zOffset = 0.15f;
         [SerializeField] private Vector2 _recoilRange = new Vector2(2, 2);
 
@@ -15,52 +17,56 @@ namespace WeaponSystem
         private Vector3 _targetWeaponPosition;
         private Vector3 _currentWeaponPosition;
 
-        private ICameraAngles _cameraAngles;
+        private IRecoilControlAngles _recoilControlAngles;
         private Vector3 _targetCameraRotation;
         private float _previousEndCameraXRotation;
-        
-        private float _recoilSpeed;
+
+        private float _currentKickbackSpeed;
+        private float _currentRecoilSpeed;
+        private float _kickbackFraction;
         private float _recoilFraction;
 
-        public void Initialize(Vector3 weaponPositionInHolder, ICameraAngles cameraAngles)
+        public void Initialize(Vector3 weaponPositionInHolder, IRecoilControlAngles recoilControlAngles)
         {
             _weaponPositionInHolder = weaponPositionInHolder;
             _currentWeaponPosition = _weaponPositionInHolder;
-            _cameraAngles = cameraAngles;
+            _recoilControlAngles = recoilControlAngles;
             PlayerController.OnShootEnd.AddListener(SetRecoilReturnParameters);
         }
 
         public void UpdateKickback()
         {
-            if (_kickbackSpeed == 0) return;
-            
             if (_currentWeaponPosition.IsComparableWith(_targetWeaponPosition) && _targetWeaponPosition != _weaponPositionInHolder)
             {
                 _targetWeaponPosition = _weaponPositionInHolder;
-                _recoilSpeed = _kickbackReturnSpeed;
+                _currentKickbackSpeed = _kickbackReturnSpeed;
             }
 
-            _recoilFraction += _recoilSpeed * Time.deltaTime;
-            
-            _currentWeaponPosition = Vector3.Lerp(_currentWeaponPosition, _targetWeaponPosition, _recoilFraction);
+            _kickbackFraction += _currentKickbackSpeed * Time.deltaTime;
+            _currentWeaponPosition = Vector3.Lerp(_currentWeaponPosition, _targetWeaponPosition, _kickbackFraction);
             transform.localPosition = _currentWeaponPosition;
-            
-            Vector3 recoilAngles = _cameraAngles.RecoilAngles;
+
+            _recoilFraction += _currentRecoilSpeed * Time.deltaTime;
+            Vector3 recoilAngles = _recoilControlAngles.RecoilAngles;
             recoilAngles = Vector3.Lerp(recoilAngles, _targetCameraRotation, _recoilFraction);
-            _cameraAngles.SetRecoilAngles(recoilAngles);
+            _recoilControlAngles.SetRecoilAngles(recoilAngles);
         }
 
-        public void SetKickbackParameters()
+        public void SetUp()
         {
+            _kickbackFraction = 0;
             _recoilFraction = 0;
-            _recoilSpeed = _kickbackSpeed;
+            _currentKickbackSpeed = _kickbackSpeed;
+            _currentRecoilSpeed = _recoilSpeed;
             _targetWeaponPosition = _weaponPositionInHolder - Vector3.forward * _zOffset;
             _targetCameraRotation += new Vector3(-_recoilRange.y, Random.Range(-_recoilRange.x, _recoilRange.x));
         }
 
         private void SetRecoilReturnParameters()
         {
-            float endXRotation = _cameraAngles.XAngleBeforeShooting - _cameraAngles.XAngle + _previousEndCameraXRotation;
+            _recoilFraction = 0;
+            _currentRecoilSpeed = _recoilReturnSpeed;
+            float endXRotation = _recoilControlAngles.XAngleBeforeShooting - _recoilControlAngles.XAngle + _previousEndCameraXRotation;
             _targetCameraRotation = Vector3.right * endXRotation;
             _previousEndCameraXRotation = endXRotation;
         }

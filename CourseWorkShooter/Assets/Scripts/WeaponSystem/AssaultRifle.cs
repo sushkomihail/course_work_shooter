@@ -7,9 +7,9 @@ namespace WeaponSystem
 {
     public class AssaultRifle : Weapon
     {
-        public override void Initialize(Transform cameraTransform, ICameraAngles cameraAngles)
+        public override void Initialize(Transform cameraTransform, IRecoilControlAngles recoilControlAngles)
         {
-            base.Initialize(cameraTransform, cameraAngles);
+            base.Initialize(cameraTransform, recoilControlAngles);
 
             _attack = new RaycastAttack(cameraTransform, _muzzle, _spreadRange, _attackMask, _damage);
         }

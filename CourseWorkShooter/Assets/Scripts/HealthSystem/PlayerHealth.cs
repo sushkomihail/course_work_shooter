@@ -9,7 +9,7 @@ namespace HealthSystem
         [SerializeField] private float _recoveryCooldownTime = 3;
         [SerializeField] private float _recoverySpeed = 0.5f;
 
-        private float _currentArmor;
+        private int _currentArmor;
         private IEnumerator _recoveryRoutine;
 
         public override void Initialize()
@@ -23,8 +23,8 @@ namespace HealthSystem
         {
             StopCoroutine(_recoveryRoutine);
             
-            float armorDamage = damage >= _currentArmor ? _currentArmor : damage;
-            float healthDamage = damage - armorDamage;
+            int armorDamage = damage >= _currentArmor ? _currentArmor : damage;
+            int healthDamage = damage - armorDamage;
 
             _currentArmor -= armorDamage;
             _currentHealth -= healthDamage;
@@ -40,6 +40,13 @@ namespace HealthSystem
                 _recoveryRoutine = RecoverHealth();
                 StartCoroutine(_recoveryRoutine);
             }
+        }
+
+        public void RepairArmor(int buffValue)
+        {
+            int armorLoss = _maxArmor - _currentArmor;
+            int buffAmount = armorLoss > buffValue ? buffValue : armorLoss;
+            _currentArmor += buffAmount;
         }
 
         private IEnumerator RecoverHealth()

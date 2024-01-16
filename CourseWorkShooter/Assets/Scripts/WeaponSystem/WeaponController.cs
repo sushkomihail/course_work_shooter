@@ -15,11 +15,11 @@ namespace WeaponSystem
 
         private bool _isFireButtonPressed;
 
-        public void Initialize(ICameraAngles cameraAngles)
+        public void Initialize(IRecoilControlAngles recoilControlAngles)
         {
             PlayerController.OnShoot.AddListener(() => _isFireButtonPressed = true);
             PlayerController.OnShootEnd.AddListener(() => _isFireButtonPressed = false);
-            InstantiateWeapons(cameraAngles);
+            InstantiateWeapons(recoilControlAngles);
         }
         
         public void UpdateWeapon(MovementStates currentMovementState, Vector2 lookInputVector)
@@ -27,7 +27,7 @@ namespace WeaponSystem
             if (_isFireButtonPressed && _currentWeapon.IsReadyToShoot)
             {
                 StartCoroutine(_currentWeapon.PerformAttack());
-                _currentWeapon.Recoil.SetKickbackParameters();
+                _currentWeapon.Recoil.SetUp();
                 _currentWeapon.View.PlayMuzzleFlashParticles();
                 _currentWeapon.View.PlayShootSound();
 
@@ -59,7 +59,7 @@ namespace WeaponSystem
             _currentWeapon.gameObject.SetActive(true);
         }
 
-        private void InstantiateWeapons(ICameraAngles cameraAngles)
+        private void InstantiateWeapons(IRecoilControlAngles recoilControlAngles)
         {
             if (weaponsCollection == null) return;
             
@@ -68,7 +68,7 @@ namespace WeaponSystem
             foreach (Weapon prefab in weaponPrefabs)
             {
                 Weapon weapon = Instantiate(prefab, _cameraTransform);
-                weapon.Initialize(_cameraTransform, cameraAngles);
+                weapon.Initialize(_cameraTransform, recoilControlAngles);
                 weapon.gameObject.SetActive(false);
                 _playerWeapons.Add(weapon);
             }
