@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using InputSystem;
 using Player;
 using UnityEngine;
 
@@ -7,74 +7,60 @@ namespace WeaponSystem
     public class WeaponController : MonoBehaviour
     {
         [SerializeField] private Transform _cameraTransform;
-        [SerializeField] private WeaponsCollection weaponsCollection;
+        [SerializeField] private SelectedWeaponsCollection _selectedWeapons;
+        [SerializeField] private float _switchSpeed = 1;
+        [SerializeField] private Vector3 _switchOffset = new Vector3(0, 0.2f, 0);
 
-        private readonly List<Weapon> _playerWeapons = new List<Weapon>();
-        private Weapon _currentWeapon;
+        private Weapon[] _playerWeapons;
         private int _weaponId;
 
         private bool _isFireButtonPressed;
+        
+        public WeaponSwitcher Switcher;
 
-        public void Initialize(IRecoilControlAngles recoilControlAngles)
+        public void Initialize(PlayerInputSystem input, IRecoilControlAngles recoilControlAngles)
         {
             PlayerController.OnShoot.AddListener(() => _isFireButtonPressed = true);
             PlayerController.OnShootEnd.AddListener(() => _isFireButtonPressed = false);
+            
             InstantiateWeapons(recoilControlAngles);
+            Switcher = new WeaponSwitcher(input, _playerWeapons, _switchSpeed, _switchOffset);
         }
         
         public void UpdateWeapon(MovementStates currentMovementState, Vector2 lookInputVector)
         {
-            if (_isFireButtonPressed && _currentWeapon.IsReadyToShoot)
+            if (_isFireButtonPressed && Switcher.CurrentWeapon.IsReadyToShoot)
             {
-                StartCoroutine(_currentWeapon.PerformAttack());
-                _currentWeapon.Recoil.SetUp();
-                _currentWeapon.View.PlayMuzzleFlashParticles();
-                _currentWeapon.View.PlayShootSound();
+                StartCoroutine(Switcher.CurrentWeapon.PerformAttack());
+                Switcher.CurrentWeapon.Recoil.SetUp();
+                Switcher.CurrentWeapon.View.PlayMuzzleFlashParticles();
+                Switcher.CurrentWeapon.View.PlayShootSound();
 
-                if (!_currentWeapon.CanHold)
+                if (!Switcher.CurrentWeapon.CanHold)
                 {
                     _isFireButtonPressed = false;
                 }
             }
             
-            _currentWeapon.Recoil.UpdateKickback();
-            _currentWeapon.Bobbing.Perform(currentMovementState);
-            _currentWeapon.Sway.Perform(lookInputVector);
-        }
-
-        public void SetWeaponId(float mouseScroll)
-        {
-            if (mouseScroll > 0) _weaponId += 1;
-            else _weaponId -= 1;
-
-            _weaponId %= _playerWeapons.Count;
-
-            if (_weaponId < 0) _weaponId += _playerWeapons.Count;
-        }
-
-        public void ChangeWeapon()
-        {
-            _currentWeapon.gameObject.SetActive(false);
-            _currentWeapon = _playerWeapons[_weaponId];
-            _currentWeapon.gameObject.SetActive(true);
+            Switcher.CurrentWeapon.Recoil.UpdateKickback();
+            Switcher.CurrentWeapon.Bobbing.Perform(currentMovementState);
+            Switcher.CurrentWeapon.Sway.Perform(lookInputVector);
         }
 
         private void InstantiateWeapons(IRecoilControlAngles recoilControlAngles)
         {
-            if (weaponsCollection == null) return;
+            if (_selectedWeapons == null) return;
             
-            Weapon[] weaponPrefabs = weaponsCollection.Weapons;
+            Weapon[] weaponPrefabs = _selectedWeapons.WeaponPrefabs;
+            _playerWeapons = new Weapon[weaponPrefabs.Length];
 
-            foreach (Weapon prefab in weaponPrefabs)
+            for (int i = 0; i < weaponPrefabs.Length; i++)
             {
-                Weapon weapon = Instantiate(prefab, _cameraTransform);
+                Weapon weapon = Instantiate(weaponPrefabs[i], _cameraTransform);
                 weapon.Initialize(_cameraTransform, recoilControlAngles);
                 weapon.gameObject.SetActive(false);
-                _playerWeapons.Add(weapon);
+                _playerWeapons[i] = weapon;
             }
-
-            _currentWeapon = _playerWeapons[0];
-            _currentWeapon.gameObject.SetActive(true);
         }
     }
 }

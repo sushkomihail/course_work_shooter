@@ -1,5 +1,5 @@
 {
-    "name": "PlayerControls",
+    "name": "Controls",
     "maps": [
         {
             "name": "Player",
@@ -24,16 +24,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "HandleWeaponWheel",
-                    "type": "Button",
-                    "id": "87e8c91a-de49-47a6-8a94-653e3df4538c",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "ChangeWeapon",
+                    "name": "SwitchWeapon",
                     "type": "Value",
                     "id": "6125055a-9e60-4afd-b6ee-6f90d725e3d8",
                     "expectedControlType": "Axis",
@@ -103,23 +94,12 @@
                 },
                 {
                     "name": "",
-                    "id": "922357d1-25c4-4d37-9bc3-02373cc7adb2",
-                    "path": "<Keyboard>/leftAlt",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "HandleWeaponWheel",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "8b3b183f-4106-4aa4-a89a-f8b4cbfed198",
                     "path": "<Mouse>/scroll/y",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "ChangeWeapon",
+                    "action": "SwitchWeapon",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

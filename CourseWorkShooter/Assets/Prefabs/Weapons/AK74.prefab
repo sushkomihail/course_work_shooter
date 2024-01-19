@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1873066138702396742}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 3487402117147476660}
   - component: {fileID: 7027267096416199271}
   - component: {fileID: 1346390296729585865}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bolt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 7265023781643416953}
   - component: {fileID: 4502573843838586451}
   - component: {fileID: 4056871384153775954}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: AK74
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +174,7 @@ MonoBehaviour:
   _spreadRange: {x: 0.03, y: 0.03}
   _attackMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 448
   _damage: 7
   _shotCooldownTime: 0.1
   _positionInHolder: {x: 0.15, y: -0.14, z: 0.52}
@@ -197,6 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _kickbackSpeed: 3
   _kickbackReturnSpeed: 2
+  _recoilSpeed: 3
   _recoilReturnSpeed: 0.7
   _zOffset: 0.14
   _recoilRange: {x: 1, y: 2}
@@ -247,7 +248,7 @@ MonoBehaviour:
   _muzzleFlash: {fileID: 5092305224724151926}
   _emittingParticlesCount: 5
   _trailPrefab: {fileID: 5654934940918883830, guid: 7d3ba7bf7d048ee43a9e52bd13ac873c, type: 3}
-  _impactPrefab: {fileID: 8528973554111594019, guid: 5e02303289b3c494e8e185be0fbbd405, type: 3}
+  _impacts: {fileID: 11400000, guid: b3c0561934ab7134cb3b99de3b813503, type: 2}
 --- !u!1 &3049837616224943771
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,7 +260,7 @@ GameObject:
   - component: {fileID: 4961538841072920131}
   - component: {fileID: 7995582386520877088}
   - component: {fileID: 6038548674070681403}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -342,7 +343,7 @@ GameObject:
   - component: {fileID: 7863050143046950554}
   - component: {fileID: 8708156305396313405}
   - component: {fileID: 129500387825123373}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -424,7 +425,7 @@ GameObject:
   m_Component:
   - component: {fileID: 619924590508228253}
   - component: {fileID: 1068205413865278609}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Shoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -551,7 +552,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6670656860220221580}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: AudioSources
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -585,7 +586,7 @@ GameObject:
   - component: {fileID: 4598973381997040732}
   - component: {fileID: 2887123431142047247}
   - component: {fileID: 3255641802870799818}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Mag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -666,7 +667,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4810250531658625510}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -699,6 +700,10 @@ PrefabInstance:
     - target: {fileID: 4834526503407549940, guid: 2735bebe54c1f5a4096f5134a96f7e77, type: 3}
       propertyPath: m_Name
       value: P_MuzzleFlash
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834526503407549940, guid: 2735bebe54c1f5a4096f5134a96f7e77, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4836458910855560858, guid: 2735bebe54c1f5a4096f5134a96f7e77, type: 3}
       propertyPath: m_LocalPosition.x

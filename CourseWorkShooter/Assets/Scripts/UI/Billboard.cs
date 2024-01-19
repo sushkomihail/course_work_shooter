@@ -1,23 +1,22 @@
-﻿using System;
-using Player;
+﻿using Player;
 using UnityEngine;
 
 namespace UI
 {
     public class Billboard : MonoBehaviour
     {
-        private Transform _playerTransform;
+        private Transform _cameraHolder;
         
         private void Awake()
         {
-            _playerTransform = FindObjectOfType<PlayerController>().transform;
+            _cameraHolder = FindObjectOfType<PlayerController>()?.Camera.CameraHolder;
         }
 
         private void Update()
         {
-            if (_playerTransform == null) return;
+            if (_cameraHolder == null) return;
             
-            transform.LookAt(_playerTransform);
+            transform.rotation = Quaternion.LookRotation(_cameraHolder.forward);
         }
     }
 }

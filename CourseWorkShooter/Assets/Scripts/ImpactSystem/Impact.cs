@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace WeaponSystem
+namespace ImpactSystem
 {
     public class Impact : MonoBehaviour
     {

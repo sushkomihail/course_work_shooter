@@ -14,6 +14,7 @@ namespace Player
         private float _ySensitivity = 50;
         private Vector3 _recoilAngles;
 
+        public Transform CameraHolder => _cameraHolder;
         public float XAngle { get; private set; }
         public float XAngleBeforeShooting { get; private set; }
         public Vector3 RecoilAngles => _recoilAngles;
@@ -45,9 +46,6 @@ namespace Player
             _cameraHolder.localRotation = Quaternion.Euler(XAngle + _recoilAngles.x, _recoilAngles.y, 0);
         }
 
-        public void SetRecoilAngles(Vector3 recoilAngles)
-        {
-            _recoilAngles = recoilAngles;
-        }
+        public void SetRecoilAngles(Vector3 recoilAngles) => _recoilAngles = recoilAngles;
     }
 }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8222663450533226302}
   - component: {fileID: 1537157162321847290}
   - component: {fileID: 6306515936998880955}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sea_Shotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,8 +56,8 @@ MonoBehaviour:
   _spreadRange: {x: 0.035, y: 0.035}
   _attackMask:
     serializedVersion: 2
-    m_Bits: 65
-  _damage: 5
+    m_Bits: 448
+  _damage: 12
   _shotCooldownTime: 1.3
   _positionInHolder: {x: 0.15, y: -0.24, z: 0.48}
   _canHold: 0
@@ -131,7 +131,7 @@ MonoBehaviour:
   _muzzleFlash: {fileID: 77786042061874715}
   _emittingParticlesCount: 5
   _trailPrefab: {fileID: 5654934940918883830, guid: 7d3ba7bf7d048ee43a9e52bd13ac873c, type: 3}
-  _impactPrefab: {fileID: 8528973554111594019, guid: 5e02303289b3c494e8e185be0fbbd405, type: 3}
+  _impacts: {fileID: 11400000, guid: b3c0561934ab7134cb3b99de3b813503, type: 2}
 --- !u!1 &1132302415157588484
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,7 +141,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3678387722284311957}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: AudioSources
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6961103742328586389}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 1145954508645918096}
   - component: {fileID: 7305194101981410941}
   - component: {fileID: 3449948024987763035}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -288,7 +288,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8172998188710959033}
   - component: {fileID: 8067283463331054968}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Shoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -320,7 +320,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b33e2cff5225f4437a43a11d35763d46, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b2d159f7e00d44d9bbc2d50a0c4fef59, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -330,7 +330,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.5757499
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -417,6 +417,10 @@ PrefabInstance:
     - target: {fileID: 4834526503407549940, guid: 2735bebe54c1f5a4096f5134a96f7e77, type: 3}
       propertyPath: m_Name
       value: P_MuzzleFlash
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834526503407549940, guid: 2735bebe54c1f5a4096f5134a96f7e77, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4836458910855560858, guid: 2735bebe54c1f5a4096f5134a96f7e77, type: 3}
       propertyPath: m_LocalPosition.x

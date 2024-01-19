@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WeaponsCollection
   m_EditorClassIdentifier: 
   _weapons:
-  - {fileID: 5097093629620742399, guid: ee329c3cd08e58645834d20702d7f6c6, type: 3}
-  - {fileID: 82416938568833786, guid: 8b0b86b42def11849a8eba21f4a6a684, type: 3}
-  - {fileID: 4792021990834487134, guid: 5c5f8c71a1678e6409554b8e962667ce, type: 3}
-  - {fileID: 6662658833138735980, guid: 496e1019c14973846b764bca1025b09d, type: 3}
+  - _name: Sea Shotgun
+    _weaponPrefab: {fileID: 6662658833138735980, guid: 496e1019c14973846b764bca1025b09d, type: 3}
+  - _name: AK-74
+    _weaponPrefab: {fileID: 5097093629620742399, guid: ee329c3cd08e58645834d20702d7f6c6, type: 3}

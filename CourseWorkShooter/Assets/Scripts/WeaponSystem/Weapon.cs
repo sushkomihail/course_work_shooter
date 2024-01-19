@@ -47,7 +47,7 @@ namespace WeaponSystem
 
             if (_attack.IsHit)
             {
-                _view.PlayImpactParticles(_attack.HitPosition, _attack.HitNormal);
+                _view.PlayImpactParticles(_attack.HitPosition, _attack.HitNormal, _attack.HitLayer);
             }
         }
         

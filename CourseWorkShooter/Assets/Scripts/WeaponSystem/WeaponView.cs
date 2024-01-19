@@ -1,3 +1,5 @@
+using Collections;
+using ImpactSystem;
 using UnityEngine;
 
 namespace WeaponSystem
@@ -8,7 +10,7 @@ namespace WeaponSystem
         [SerializeField] private ParticleSystem _muzzleFlash;
         [SerializeField] private int _emittingParticlesCount = 5;
         [SerializeField] private Trail _trailPrefab;
-        [SerializeField] private Impact _impactPrefab;
+        [SerializeField] private ImpactsCollection _impacts;
 
         public void PlayMuzzleFlashParticles()
         {
@@ -35,12 +37,14 @@ namespace WeaponSystem
             trail.StartCoroutine(trail.ShowTrail(startPoint, endPoint));
         }
 
-        public void PlayImpactParticles(Vector3 hitPosition, Vector3 hitNormal)
+        public void PlayImpactParticles(Vector3 hitPosition, Vector3 hitNormal, LayerMask hitLayer)
         {
-            if (_impactPrefab == null) return;
+            Impact impactPrefab = _impacts.GetImpact(hitLayer);
+            
+            if (impactPrefab == null) return;
 
             Quaternion rotation = Quaternion.LookRotation(hitNormal);
-            Instantiate(_impactPrefab, hitPosition, rotation);
+            Instantiate(impactPrefab, hitPosition, rotation);
         }
     }
 }

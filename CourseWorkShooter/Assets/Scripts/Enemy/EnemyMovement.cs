@@ -9,43 +9,32 @@ namespace Enemy
         [SerializeField] private Animator _animator;
         [SerializeField] private float _transitionalValue = 0.5f;
         [SerializeField] private NavMeshAgent _agent;
-        [SerializeField] private float _speed = 2;
+        [SerializeField] private float _moveSpeed = 2;
+        [SerializeField] private float _rotationSpeed = 2;
 
         private int _isWalkingHash;
-        private int _locomotionHash;
-         
-        private Transform _defaultTarget;
 
-        public Transform CurrentTarget { get; private set; }
-
-        public void Initialize(float attackDistance)
+        public void Initialize(float stoppingDistance)
         {
             _isWalkingHash = Animator.StringToHash("IsWalking");
-            _locomotionHash = Animator.StringToHash("Locomotion");
             
-            _agent.speed = _speed;
-            _agent.stoppingDistance = attackDistance;
-            
-            _defaultTarget = FindObjectOfType<ChestController>().transform;
+            _agent.speed = _moveSpeed;
+            _agent.stoppingDistance = stoppingDistance;
         }
 
-        public void MoveToTarget(EnemyVision vision)
+        public void Move(Transform target)
         {
-            CurrentTarget = _defaultTarget;
-            float distanceToChest = Vector3.Distance(transform.position, _defaultTarget.position);
-            
-            if (vision.TryFindPlayer())
-            {
-                float distanceToPlayer = Vector3.Distance(transform.position, vision.PlayerTransform.position);
-
-                if (distanceToPlayer < distanceToChest)
-                {
-                    CurrentTarget = vision.PlayerTransform;
-                }
-            }
-            
-            _agent.SetDestination(CurrentTarget.position);
+            RotateToTarget(target);
+            _agent.SetDestination(target.position);
             _animator.SetBool(_isWalkingHash, _agent.velocity.magnitude > _transitionalValue);
+        }
+
+        private void RotateToTarget(Transform target)
+        {
+            Vector3 directionToTarget = target.position - transform.position;
+            directionToTarget.y = 0;
+            Quaternion newRotation = Quaternion.LookRotation(directionToTarget);
+            transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, _rotationSpeed * Time.deltaTime);
         }
     }
 }

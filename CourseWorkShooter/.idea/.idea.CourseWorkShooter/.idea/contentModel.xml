@@ -9,6 +9,7 @@
           <e p="UI" t="Include" />
         </e>
         <e p="Configs" t="Include">
+          <e p="Collections" t="Include" />
           <e p="URP" t="Include" />
         </e>
         <e p="Materials" t="Include">
@@ -47,14 +48,18 @@
             <e p="ChestController.cs" t="Include" />
             <e p="ChestShaker.cs" t="Include" />
           </e>
-          <e p="Enemy" t="Include">
+          <e p="Collections" t="Include">
             <e p="EnemiesCollection.cs" t="Include" />
+          </e>
+          <e p="Enemy" t="Include">
             <e p="EnemyAttackController.cs" t="Include" />
             <e p="EnemyController.cs" t="Include" />
             <e p="EnemyMovement.cs" t="Include" />
             <e p="EnemyVision.cs" t="Include" />
           </e>
+          <e p="EventManager.cs" t="Include" />
           <e p="Extensions" t="Include">
+            <e p="ArrayExtensions.cs" t="Include" />
             <e p="Vector3Extensions.cs" t="Include" />
           </e>
           <e p="GameManager.cs" t="Include" />
@@ -63,6 +68,11 @@
             <e p="EnemyHealth.cs" t="Include" />
             <e p="Health.cs" t="Include" />
             <e p="PLayerHealth.cs" t="Include" />
+          </e>
+          <e p="ImpactSystem" t="Include">
+            <e p="Impact.cs" t="Include" />
+            <e p="ImpactsCollection.cs" t="Include" />
+            <e p="ImpactsCollectionItem.cs" t="Include" />
           </e>
           <e p="InputSystem" t="Include">
             <e p="InputSystem.cs" t="Include" />
@@ -94,15 +104,21 @@
           </e>
           <e p="UI" t="Include">
             <e p="Billboard.cs" t="Include" />
-            <e p="ControlSettings.cs" t="Include" />
-            <e p="OptionsLoader.cs" t="Include" />
-            <e p="SaveButton.cs" t="Include" />
+            <e p="EnemyUi.cs" t="Include" />
+            <e p="Menu" t="Include">
+              <e p="ControlSettings.cs" t="Include" />
+              <e p="OptionsLoader.cs" t="Include" />
+              <e p="SaveButton.cs" t="Include" />
+            </e>
+            <e p="PlayerUi.cs" t="Include" />
             <e p="SceneTransition.cs" t="Include" />
+            <e p="UiGrid.cs" t="Include" />
+            <e p="WeaponGridItem.cs" t="Include" />
             <e p="WindowTransition.cs" t="Include" />
           </e>
           <e p="WeaponSystem" t="Include">
             <e p="AssaultRifle.cs" t="Include" />
-            <e p="Impact.cs" t="Include" />
+            <e p="SelectedWeaponsCollection.cs" t="Include" />
             <e p="Shotgun.cs" t="Include" />
             <e p="Trail.cs" t="Include" />
             <e p="Weapon.cs" t="Include" />
@@ -110,7 +126,9 @@
             <e p="WeaponController.cs" t="Include" />
             <e p="WeaponRecoil.cs" t="Include" />
             <e p="WeaponsCollection.cs" t="Include" />
+            <e p="WeaponsCollectionItem.cs" t="Include" />
             <e p="WeaponSway.cs" t="Include" />
+            <e p="WeaponSwitcher.cs" t="Include" />
             <e p="WeaponView.cs" t="Include" />
           </e>
         </e>

@@ -20,8 +20,9 @@ namespace Enemy
 
         private void Update()
         {
-            _movement.MoveToTarget(_vision);
-            _attackController.UpdateAttack(_movement.CurrentTarget);
+            _vision.Look();
+            _movement.Move(_vision.CurrentTarget);
+            _attackController.UpdateAttack(_vision.CurrentTarget);
         }
     }
 }

@@ -2,6 +2,7 @@ using HealthSystem;
 using InputSystem;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 using WeaponSystem;
 
 namespace Player
@@ -19,6 +20,8 @@ namespace Player
         
         private Vector2 _currentMoveInputVector;
 
+        public PlayerCamera Camera => _camera;
+
         private void Awake()
         {
             Cursor.lockState = CursorLockMode.Locked;
@@ -27,7 +30,7 @@ namespace Player
             _input.Initialize();
             _camera.Initialize();
             _movement.Initialize();
-            _weaponController.Initialize(_camera);
+            _weaponController.Initialize(_input, _camera);
             _health.Initialize();
 
             _movement.HandleState(MovementStates.Idle);
@@ -39,11 +42,7 @@ namespace Player
             _input.Controls.Player.Jump.performed += _ => _movement.HandleState(MovementStates.Jump);
             _input.Controls.Player.Crouch.performed += _ => _movement.HandleState(MovementStates.Crouch);
 
-            _input.Controls.Player.ChangeWeapon.started += context =>
-            {
-                _weaponController.SetWeaponId(context.ReadValue<float>());
-                _weaponController.ChangeWeapon();
-            };
+            _input.Controls.Player.SwitchWeapon.performed += PerformWeaponSwitching;
             _input.Controls.Player.Shoot.started += _ => OnShoot?.Invoke();
             _input.Controls.Player.Shoot.canceled += _ => OnShootEnd?.Invoke();
         }
@@ -66,6 +65,20 @@ namespace Player
             _camera.Look(lookInputVector);
             _movement.Move(moveInputVector);
             _weaponController.UpdateWeapon(_movement.CurrentState, lookInputVector);
+        }
+
+        private void PerformWeaponSwitching(InputAction.CallbackContext context)
+        {
+            if (_weaponController.Switcher.IsSwitching) return;
+            
+            string key = context.control.name;
+
+            if (key == "y")
+            {
+                _weaponController.Switcher.UpdateMouseScroll(context.ReadValue<float>());
+            }
+                    
+            StartCoroutine(_weaponController.Switcher.Switch(key));
         }
     }
 }

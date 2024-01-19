@@ -2,11 +2,11 @@
 
 namespace WeaponSystem
 {
-    [CreateAssetMenu(menuName = "WeaponSystem/WeaponsCollection", fileName = "WeaponsCollection")]
+    [CreateAssetMenu(menuName = "Collections/WeaponsCollection", fileName = "WeaponsCollection")]
     public class WeaponsCollection : ScriptableObject
     {
-        [SerializeField] private Weapon[] _weapons;
+        [SerializeField] private WeaponsCollectionItem[] _weapons;
 
-        public Weapon[] Weapons => _weapons;
+        public WeaponsCollectionItem[] Weapons => _weapons;
     }
 }

@@ -7,11 +7,10 @@ namespace AttackSystem
         protected readonly int _damage;
         private const int RayDistanceWithoutHit = 200;
 
-        public Vector3 HitPosition { get; private set; }
-        
-        public Vector3 HitNormal { get; private set; }
-        
         public bool IsHit { get; private set; }
+        public Vector3 HitPosition { get; private set; }
+        public Vector3 HitNormal { get; private set; }
+        public LayerMask HitLayer { get; private set; }
 
         protected Attack(int damage)
         {
@@ -52,6 +51,7 @@ namespace AttackSystem
                 IsHit = true;
                 HitPosition = hit.point;
                 HitNormal = hit.normal;
+                HitLayer = hit.transform.gameObject.layer;
                 return;
             }
 

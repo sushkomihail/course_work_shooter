@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Collections;
 using Enemy;
 using UnityEngine;
 using UnityEngine.Events;
@@ -10,14 +11,12 @@ namespace SpawnSystem
     {
         [SerializeField] private Transform[] _spawnPoints;
         [SerializeField] private EnemiesCollection _collection;
-        
-        public static readonly UnityEvent<GameObject> OnEnemyDeath = new UnityEvent<GameObject>();
 
-        private readonly List<EnemyController> _enemiesOnScene = new List<EnemyController>();
+        private int _enemiesOnSceneCount;
 
         private void Awake()
         {
-            OnEnemyDeath.AddListener(RemoveDiedEnemyFromList);
+            EventManager.OnEnemyDeath.AddListener(OnEnemyDeath);
         }
 
         private void Start()
@@ -32,19 +31,15 @@ namespace SpawnSystem
             foreach (Transform point in _spawnPoints)
             {
                 EnemyController enemy = Instantiate(_collection.NextEnemy, point.position, point.rotation);
-                _enemiesOnScene.Add(enemy);
+                _enemiesOnSceneCount += 1;
             }
         }
 
-        private void RemoveDiedEnemyFromList(GameObject diedEnemy)
+        private void OnEnemyDeath()
         {
-            if (diedEnemy.TryGetComponent(out EnemyController enemy))
-            {
-                _enemiesOnScene.Remove(enemy);
-                Destroy(diedEnemy);
-            }
-
-            if (_enemiesOnScene.Count == 0)
+            _enemiesOnSceneCount -= 1;
+            
+            if (_enemiesOnSceneCount == 0)
             {
                 StartCoroutine(SpawnWave());
             }

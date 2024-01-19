@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 505637421860786685}
   - component: {fileID: 3627593539614939928}
   - component: {fileID: 7706384589554942687}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 2400017139035066097}
   - component: {fileID: 6555800731830567829}
   - component: {fileID: 1034292759513343242}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -285,7 +285,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cameraTransform: {fileID: 505637421860786685}
-  weaponsCollection: {fileID: 11400000, guid: 8412a2cf979c0bd4d95c43a24b14fd94, type: 2}
+  _selectedWeapons: {fileID: 11400000, guid: bbc3470fb17610b42b3779e3790888dc, type: 2}
+  _switchSpeed: 1
+  _switchOffset: {x: 0, y: -0.2, z: 0}
 --- !u!114 &1034292759513343242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,7 +303,7 @@ MonoBehaviour:
   _maxHealth: 100
   _maxArmor: 50
   _recoveryCooldownTime: 4
-  _recoverySpeed: 3
+  _recoverySpeed: 2.5
 --- !u!1 &7380201326291802391
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,7 +313,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5469042031554349892}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CameraHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}

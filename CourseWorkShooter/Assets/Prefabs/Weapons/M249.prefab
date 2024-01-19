@@ -539,7 +539,7 @@ MonoBehaviour:
   _spreadRange: {x: 0.04, y: 0.04}
   _attackMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 448
   _damage: 9
   _shotCooldownTime: 0.06
   _positionInHolder: {x: 0.21, y: -0.31, z: 0.81}
@@ -562,6 +562,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _kickbackSpeed: 3
   _kickbackReturnSpeed: 2
+  _recoilSpeed: 3
   _recoilReturnSpeed: 0.7
   _zOffset: 0.15
   _recoilRange: {x: 2, y: 3.2}
@@ -612,7 +613,7 @@ MonoBehaviour:
   _muzzleFlash: {fileID: 1098527906925592151}
   _emittingParticlesCount: 5
   _trailPrefab: {fileID: 5654934940918883830, guid: 7d3ba7bf7d048ee43a9e52bd13ac873c, type: 3}
-  _impactPrefab: {fileID: 8528973554111594019, guid: 5e02303289b3c494e8e185be0fbbd405, type: 3}
+  _impacts: {fileID: 11400000, guid: b3c0561934ab7134cb3b99de3b813503, type: 2}
 --- !u!1 &8275357774844438820
 GameObject:
   m_ObjectHideFlags: 0
