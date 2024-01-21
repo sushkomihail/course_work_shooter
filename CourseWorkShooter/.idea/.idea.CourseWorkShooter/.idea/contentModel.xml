@@ -17,24 +17,25 @@
             <e p="Fish" t="Include" />
           </e>
           <e p="Effects" t="Include" />
+          <e p="Enviroment" t="Include" />
           <e p="Weapons" t="Include" />
         </e>
         <e p="Models" t="Include">
           <e p="Characters" t="Include">
             <e p="Fish" t="Include" />
           </e>
+          <e p="Enviroment" t="Include" />
           <e p="Weapons" t="Include" />
         </e>
         <e p="Prefabs" t="Include">
           <e p="Characters" t="Include" />
-          <e p="Particles" t="Include" />
+          <e p="Effects" t="Include" />
+          <e p="Enviroment" t="Include" />
           <e p="UI" t="Include" />
           <e p="Weapons" t="Include" />
         </e>
         <e p="README.txt" t="Include" />
-        <e p="Scenes" t="Include">
-          <e p="Game" t="Include" />
-        </e>
+        <e p="Scenes" t="Include" />
         <e p="Scripts" t="Include">
           <e p="AttackSystem" t="Include">
             <e p="Attack.cs" t="Include" />
@@ -87,10 +88,12 @@
             <e p="PlayerMovement.cs" t="Include" />
           </e>
           <e p="SaveSystem" t="Include">
-            <e p="ControlData.cs" t="Include" />
             <e p="DataTypes.cs" t="Include" />
-            <e p="ISaveable.cs" t="Include" />
             <e p="Saver.cs" t="Include" />
+            <e p="Settings" t="Include">
+              <e p="ControlData.cs" t="Include" />
+              <e p="SoundData.cs" t="Include" />
+            </e>
           </e>
           <e p="SceneLoadingSystem" t="Include">
             <e p="CallbackController.cs" t="Include" />
@@ -99,40 +102,44 @@
           </e>
           <e p="SpawnSystem" t="Include">
             <e p="SpawnController.cs" t="Include" />
-            <e p="Wave.cs" t="Include" />
-            <e p="WaveType.cs" t="Include" />
           </e>
           <e p="UI" t="Include">
             <e p="Billboard.cs" t="Include" />
             <e p="EnemyUi.cs" t="Include" />
-            <e p="Menu" t="Include">
-              <e p="ControlSettings.cs" t="Include" />
-              <e p="OptionsLoader.cs" t="Include" />
-              <e p="SaveButton.cs" t="Include" />
-            </e>
             <e p="PlayerUi.cs" t="Include" />
-            <e p="SceneTransition.cs" t="Include" />
-            <e p="UiGrid.cs" t="Include" />
-            <e p="WeaponGridItem.cs" t="Include" />
-            <e p="WindowTransition.cs" t="Include" />
+            <e p="ScrollView.cs" t="Include" />
+            <e p="ScrollViewItemsCollection.cs" t="Include" />
+            <e p="Settings" t="Include">
+              <e p="ControlSettings.cs" t="Include" />
+              <e p="SaveButton.cs" t="Include" />
+              <e p="SettingsLoader.cs" t="Include" />
+              <e p="SoundSettings.cs" t="Include" />
+            </e>
+            <e p="Transitions" t="Include">
+              <e p="PlayButton.cs" t="Include" />
+              <e p="SceneTransition.cs" t="Include" />
+              <e p="Transition.cs" t="Include" />
+              <e p="WindowTransition.cs" t="Include" />
+            </e>
+            <e p="WeaponsSelectionItem.cs" t="Include" />
           </e>
           <e p="WeaponSystem" t="Include">
             <e p="AssaultRifle.cs" t="Include" />
-            <e p="SelectedWeaponsCollection.cs" t="Include" />
             <e p="Shotgun.cs" t="Include" />
             <e p="Trail.cs" t="Include" />
             <e p="Weapon.cs" t="Include" />
             <e p="WeaponBobbing.cs" t="Include" />
             <e p="WeaponController.cs" t="Include" />
+            <e p="WeaponEffects.cs" t="Include" />
             <e p="WeaponRecoil.cs" t="Include" />
-            <e p="WeaponsCollection.cs" t="Include" />
-            <e p="WeaponsCollectionItem.cs" t="Include" />
+            <e p="WeaponsProvider.cs" t="Include" />
             <e p="WeaponSway.cs" t="Include" />
             <e p="WeaponSwitcher.cs" t="Include" />
-            <e p="WeaponView.cs" t="Include" />
           </e>
         </e>
-        <e p="Shaders" t="Include" />
+        <e p="Shaders" t="Include">
+          <e p="CartoonShader.shader" t="Include" />
+        </e>
         <e p="Sounds" t="Include">
           <e p="Bullets" t="Include" />
           <e p="Impacts" t="Include" />
@@ -182,6 +189,7 @@
             <e p="Fish" t="Include" />
           </e>
           <e p="Effects" t="Include" />
+          <e p="Enviroment" t="Include" />
           <e p="Weapons" t="Include" />
         </e>
       </e>

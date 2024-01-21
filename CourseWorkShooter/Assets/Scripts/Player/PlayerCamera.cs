@@ -1,4 +1,5 @@
 using SaveSystem;
+using SaveSystem.Settings;
 using UnityEngine;
 
 namespace Player

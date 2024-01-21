@@ -2,19 +2,50 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90961467-630f-49b4-85ae-c90ccc7e6222" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/Weapons/ShotGun_material.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/Weapons/ShotGun_material.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/Weapons/shotgun_text2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/Weapons/shotgun_text2.jpg.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Character/SkuFISH/Materials.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Character/SkuFISH/Materials/shotgun_text 1.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Character/SkuFISH/Materials/shotgun_text 1.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Character/SkuFISH/SEA_SHOTGUN.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Character/SkuFISH/SEA_SHOTGUN.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Weapons/SEA_SHOTGUN.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Models/Weapons/SEA_SHOTGUN.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Island enviroment.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Island enviroment/Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Island enviroment/Materials/Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Island enviroment/Materials/Materials/stone mater_Base_color.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Island enviroment/Materials/Materials/stone mater_Base_color.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Island enviroment/Materials/chest mat_Base_color.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Island enviroment/Materials/chest mat_Base_color.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Island enviroment/Materials/chest material.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Island enviroment/Materials/chest material.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Island enviroment/Materials/sand.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Island enviroment/Materials/sand.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Island enviroment/Materials/skybox.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Island enviroment/Materials/skybox.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Island enviroment/Materials/stone mater_Base_color.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Island enviroment/Materials/stone mater_Base_color.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Island enviroment/Materials/stone material.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Island enviroment/Materials/stone material.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Island enviroment/background 1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Island enviroment/background 1.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Island enviroment/chest.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Island enviroment/chest.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Island enviroment/island tree.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Island enviroment/island tree.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Island enviroment/island.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Island enviroment/island.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Island enviroment/island.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Island enviroment/island.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Island enviroment/sand.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Island enviroment/sand.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Island enviroment/skybox.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Island enviroment/skybox.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Island enviroment/stone.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Island enviroment/stone.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/Weapons/sea_shotgun_texture.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Materials/Weapons/sea_shotgun_texture.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Island_scene.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Island_scene.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Shaders/CartoonShader.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Shaders/CartoonShader.shader.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Weapons/ShotGun_material.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Weapons/ShotGun_material.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Weapons/ShotGun_material.mat.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Weapons/ShotGun_material.mat.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Characters.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Characters.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Characters/Fish.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Characters/Fish.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Weapons/SEA_SHOTGUN.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Weapons/SEA_SHOTGUN.fbx.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,12 +63,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

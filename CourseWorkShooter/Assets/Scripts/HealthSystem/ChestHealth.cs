@@ -8,6 +8,8 @@ namespace HealthSystem
         
         public void Initialize(ChestShaker shaker)
         {
+            Initialize();
+            
             _shaker = shaker;
         }
         

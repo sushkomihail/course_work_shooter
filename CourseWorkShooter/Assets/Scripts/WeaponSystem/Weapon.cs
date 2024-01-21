@@ -7,6 +7,7 @@ namespace WeaponSystem
 {
     public abstract class Weapon : MonoBehaviour
     {
+        [Header("Base")]
         [SerializeField] protected Transform _muzzle;
         [SerializeField] protected Vector2 _spreadRange = new Vector2(0.02f, 0.02f);
         [SerializeField] protected LayerMask _attackMask;
@@ -14,47 +15,37 @@ namespace WeaponSystem
         [SerializeField] protected float _shotCooldownTime = 0.2f;
         [SerializeField] private Vector3 _positionInHolder;
         [SerializeField] private bool _canHold;
+        
+        [Header("Systems")]
+        [SerializeField] protected WeaponEffects _effects;
         [SerializeField] private WeaponRecoil _recoil;
         [SerializeField] private WeaponBobbing _bobbing;
         [SerializeField] private WeaponSway _sway;
-        [SerializeField] private WeaponView _view;
 
         protected Attack _attack;
-        protected bool _isReadyToShoot = true;
         
         public WeaponRecoil Recoil => _recoil;
         public WeaponBobbing Bobbing => _bobbing;
         public WeaponSway Sway => _sway;
-        public WeaponView View => _view;
-        public bool IsReadyToShoot => _isReadyToShoot;
         public bool CanHold => _canHold;
+        public bool IsReadyToShoot { get; protected set; }
 
         public virtual void Initialize(Transform cameraTransform, IRecoilControlAngles recoilControlAngles)
         {
+            IsReadyToShoot = true;
+            
             transform.localPosition = _positionInHolder;
+            
+            _effects.Initialize();
             _recoil.Initialize(_positionInHolder, recoilControlAngles);
         }
 
-        public virtual void Initialize() {}
-
-        public abstract IEnumerator PerformAttack();
-        public abstract IEnumerator PerformAttack(Transform target);
-
-        protected void Shoot()
+        public virtual void Initialize()
         {
-            _attack.Perform();
-            _view.PlayTrail(_muzzle.position, _attack.HitPosition);
+            IsReadyToShoot = true;
+        }
 
-            if (_attack.IsHit)
-            {
-                _view.PlayImpactParticles(_attack.HitPosition, _attack.HitNormal, _attack.HitLayer);
-            }
-        }
-        
-        protected void Shoot(Transform target)
-        {
-            _attack.Perform(target);
-            _view.PlayTrail(_muzzle.position, _attack.HitPosition);
-        }
+        public abstract IEnumerator Shoot();
+        public abstract IEnumerator Shoot(Transform target);
     }
 }

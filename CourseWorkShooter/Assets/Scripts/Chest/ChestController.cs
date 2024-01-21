@@ -1,5 +1,4 @@
-﻿using System;
-using HealthSystem;
+﻿using HealthSystem;
 using UnityEngine;
 
 namespace Chest

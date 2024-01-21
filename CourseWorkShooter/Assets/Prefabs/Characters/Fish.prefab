@@ -172,7 +172,7 @@ GameObject:
   - component: {fileID: 7330382376518608448}
   - component: {fileID: 3968890897139440263}
   - component: {fileID: 2031850409110236686}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1103,7 +1103,7 @@ GameObject:
   - component: {fileID: 2461446862029022419}
   - component: {fileID: 4362585550275228008}
   - component: {fileID: 5630435341306904055}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1695,7 +1695,7 @@ GameObject:
   - component: {fileID: 2203259727420270462}
   - component: {fileID: 596517708815834948}
   - component: {fileID: 1894760503536695875}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: Health Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1866,7 +1866,7 @@ GameObject:
   - component: {fileID: 6611797334184302491}
   - component: {fileID: 3628888236875706125}
   - component: {fileID: 2670739308909217462}
-  m_Layer: 7
+  m_Layer: 5
   m_Name: Health Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}

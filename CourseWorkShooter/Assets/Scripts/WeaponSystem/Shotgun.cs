@@ -18,33 +18,43 @@ namespace WeaponSystem
 
         public override void Initialize()
         {
+            base.Initialize();
+            
             _attack = new RaycastAttack(transform, _muzzle, _spreadRange, _attackMask, _damage);
         }
 
-        public override IEnumerator PerformAttack()
+        public override IEnumerator Shoot()
         {
-            _isReadyToShoot = false;
+            IsReadyToShoot = false;
+            
+            _effects.ShowShotEffects();
             
             for (int i = 0; i < _shotsCount; i++)
             {
-                Shoot();
+                _attack.Perform();
+                _effects.ShowBulletEffects(_muzzle, _attack);
             }
             
             yield return new WaitForSeconds(_shotCooldownTime);
-            _isReadyToShoot = true;
+            
+            IsReadyToShoot = true;
         }
 
-        public override IEnumerator PerformAttack(Transform target)
+        public override IEnumerator Shoot(Transform target)
         {
-            _isReadyToShoot = false;
+            IsReadyToShoot = false;
+            
+            _effects.ShowShotEffects();
             
             for (int i = 0; i < _shotsCount; i++)
             {
-                Shoot(target);
+                _attack.Perform(target);
+                _effects.ShowBulletEffects(_muzzle, _attack);
             }
             
             yield return new WaitForSeconds(_shotCooldownTime);
-            _isReadyToShoot = true;
+            
+            IsReadyToShoot = true;
         }
     }
 }

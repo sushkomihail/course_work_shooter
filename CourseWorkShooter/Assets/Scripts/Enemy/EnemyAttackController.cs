@@ -27,9 +27,7 @@ namespace Enemy
             {
                 if (_weapon.IsReadyToShoot)
                 {
-                    StartCoroutine(_weapon.PerformAttack(_aimingTarget));
-                    _weapon.View.PlayMuzzleFlashParticles();
-                    _weapon.View.PlayShootSound();
+                    StartCoroutine(_weapon.Shoot(_aimingTarget));
                 }
             }
         }

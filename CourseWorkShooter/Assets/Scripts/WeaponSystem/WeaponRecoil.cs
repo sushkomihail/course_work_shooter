@@ -34,7 +34,7 @@ namespace WeaponSystem
             PlayerController.OnShootEnd.AddListener(SetRecoilReturnParameters);
         }
 
-        public void UpdateKickback()
+        public void Perform()
         {
             if (_currentWeaponPosition.IsComparableWith(_targetWeaponPosition) && _targetWeaponPosition != _weaponPositionInHolder)
             {

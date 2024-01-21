@@ -56,15 +56,15 @@ MonoBehaviour:
   _spreadRange: {x: 0.035, y: 0.035}
   _attackMask:
     serializedVersion: 2
-    m_Bits: 448
+    m_Bits: 1472
   _damage: 12
   _shotCooldownTime: 1.3
   _positionInHolder: {x: 0.15, y: -0.24, z: 0.48}
   _canHold: 0
+  _effects: {fileID: 6306515936998880955}
   _recoil: {fileID: 5491128531229350674}
   _bobbing: {fileID: 8222663450533226302}
   _sway: {fileID: 1537157162321847290}
-  _view: {fileID: 6306515936998880955}
   _shotsCount: 6
 --- !u!114 &5491128531229350674
 MonoBehaviour:
@@ -130,7 +130,7 @@ MonoBehaviour:
   _shootAudioSource: {fileID: 8067283463331054968}
   _muzzleFlash: {fileID: 77786042061874715}
   _emittingParticlesCount: 5
-  _trailPrefab: {fileID: 5654934940918883830, guid: 7d3ba7bf7d048ee43a9e52bd13ac873c, type: 3}
+  _bulletTrailPrefab: {fileID: 5654934940918883830, guid: 7d3ba7bf7d048ee43a9e52bd13ac873c, type: 3}
   _impacts: {fileID: 11400000, guid: b3c0561934ab7134cb3b99de3b813503, type: 2}
 --- !u!1 &1132302415157588484
 GameObject:
@@ -256,7 +256,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6488160705792135171, guid: d9a6c4609d0560b4b9ff549509b340f2, type: 3}
+  - {fileID: 2100000, guid: bb53452e60e2b8640832a41fb4c5aada, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

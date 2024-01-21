@@ -64,7 +64,7 @@ namespace Player
             
             _camera.Look(lookInputVector);
             _movement.Move(moveInputVector);
-            _weaponController.UpdateWeapon(_movement.CurrentState, lookInputVector);
+            _weaponController.Control(_movement.CurrentState, lookInputVector);
         }
 
         private void PerformWeaponSwitching(InputAction.CallbackContext context)

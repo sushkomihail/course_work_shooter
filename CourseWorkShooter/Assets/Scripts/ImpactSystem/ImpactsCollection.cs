@@ -2,7 +2,7 @@
 
 namespace ImpactSystem
 {
-    [CreateAssetMenu(menuName = "Collections/ImpactsCollection", fileName = "ImpactsCollection")]
+    [CreateAssetMenu(menuName = "Collections/Impacts", fileName = "Impacts")]
     public class ImpactsCollection : ScriptableObject
     {
         [SerializeField] private ImpactsCollectionItem[] _impacts;
