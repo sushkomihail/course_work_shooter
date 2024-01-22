@@ -1,6 +1,6 @@
 ﻿using System.Collections;
-using UI;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace HealthSystem
 {
@@ -10,6 +10,8 @@ namespace HealthSystem
         [SerializeField] private float _recoveryCooldownTime = 3;
         [SerializeField] private float _recoverySpeed = 0.5f;
 
+        public static readonly UnityEvent<float, float> OnHealthChanged = new UnityEvent<float, float>();
+        
         private int _currentArmor;
         private IEnumerator _recoveryRoutine;
         
@@ -19,13 +21,13 @@ namespace HealthSystem
         public override void Initialize()
         {
             base.Initialize();
+            
             _currentArmor = _maxArmor;
-            _recoveryRoutine = RecoverHealth();
         }
         
         public override void TakeDamage(int damage)
         {
-            StopCoroutine(_recoveryRoutine);
+            if (_recoveryRoutine != null) StopCoroutine(_recoveryRoutine);
             
             int armorDamage = damage >= _currentArmor ? _currentArmor : damage;
             int healthDamage = damage - armorDamage;
@@ -33,7 +35,7 @@ namespace HealthSystem
             _currentArmor -= armorDamage;
             _currentHealth -= healthDamage;
             
-            PlayerUi.Instance.UpdatePlayerConditions(_armorFraction, _healthFraction);
+            OnHealthChanged?.Invoke(_healthFraction, _armorFraction);
 
             if (_currentHealth <= 0)
             {
@@ -53,7 +55,7 @@ namespace HealthSystem
             int armorLoss = _maxArmor - _currentArmor;
             int buffAmount = armorLoss > buffValue ? buffValue : armorLoss;
             _currentArmor += buffAmount;
-            PlayerUi.Instance.UpdatePlayerConditions(_armorFraction, _healthFraction);
+            OnHealthChanged?.Invoke(_healthFraction, _armorFraction);
         }
 
         private IEnumerator RecoverHealth()
@@ -69,12 +71,12 @@ namespace HealthSystem
                 float lerpFraction = elapsedTime / duration;
                 _currentHealth = Mathf.Lerp(startHealthValue, _maxHealth, lerpFraction);
                 elapsedTime += _recoverySpeed * Time.deltaTime;
-                PlayerUi.Instance.UpdatePlayerConditions(_armorFraction, _healthFraction);
+                OnHealthChanged?.Invoke(_healthFraction, _armorFraction);
                 yield return null;
             }
         
             _currentHealth = _maxHealth;
-            PlayerUi.Instance.UpdatePlayerConditions(_armorFraction, _healthFraction);
+            OnHealthChanged?.Invoke(_healthFraction, _armorFraction);
         }
     }
 }

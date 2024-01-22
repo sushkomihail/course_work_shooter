@@ -35,7 +35,9 @@
           <e p="Weapons" t="Include" />
         </e>
         <e p="README.txt" t="Include" />
-        <e p="Scenes" t="Include" />
+        <e p="Scenes" t="Include">
+          <e p="Game" t="Include" />
+        </e>
         <e p="Scripts" t="Include">
           <e p="AttackSystem" t="Include">
             <e p="Attack.cs" t="Include" />
@@ -104,9 +106,14 @@
             <e p="SpawnController.cs" t="Include" />
           </e>
           <e p="UI" t="Include">
-            <e p="Billboard.cs" t="Include" />
-            <e p="EnemyUi.cs" t="Include" />
-            <e p="PlayerUi.cs" t="Include" />
+            <e p="Game" t="Include">
+              <e p="Billboard.cs" t="Include" />
+              <e p="ChestUi.cs" t="Include" />
+              <e p="EnemyUi.cs" t="Include" />
+              <e p="GameUi.cs" t="Include" />
+              <e p="PlayerUi.cs" t="Include" />
+              <e p="ScoreUi.cs" t="Include" />
+            </e>
             <e p="ScrollView.cs" t="Include" />
             <e p="ScrollViewItemsCollection.cs" t="Include" />
             <e p="Settings" t="Include">
