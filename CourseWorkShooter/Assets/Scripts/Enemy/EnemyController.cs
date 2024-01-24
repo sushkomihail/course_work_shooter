@@ -1,4 +1,5 @@
 using HealthSystem;
+using PauseSystem;
 using UnityEngine;
 
 namespace Enemy
@@ -7,22 +8,30 @@ namespace Enemy
     {
         [SerializeField] private EnemyVision _vision;
         [SerializeField] private EnemyMovement _movement;
-        [SerializeField] private EnemyAttackController _attackController;
+        [SerializeField] private EnemyWeaponController _weaponController;
         [SerializeField] private EnemyHealth _health;
+
+        private PauseManager _pauseManager => GameManager.Instance.PauseManager;
 
         private void Awake()
         {
             _vision.Initialize();
-            _attackController.Initialize();
-            _movement.Initialize(_attackController.AttackDistance);
+            _weaponController.Initialize();
+            _movement.Initialize(_weaponController.AttackDistance);
             _health.Initialize();
+            
+            _pauseManager.AddHandler(_movement);
         }
 
         private void Update()
         {
-            _vision.Look();
+            if (!_pauseManager.IsPaused)
+            {
+                _vision.Look();
+                _weaponController.Control(_vision.CurrentTarget);
+            }
+            
             _movement.Move(_vision.CurrentTarget);
-            _attackController.UpdateAttack(_vision.CurrentTarget);
         }
     }
 }

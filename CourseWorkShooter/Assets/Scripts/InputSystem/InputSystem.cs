@@ -6,9 +6,9 @@ namespace InputSystem
     {
         public Controls Controls { get; private set; }
         
-        public abstract void OnActivate();
+        public abstract void Enable();
 
-        public abstract void OnDisactivate();
+        public abstract void Disable();
 
         public void Initialize()
         {

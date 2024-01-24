@@ -506,7 +506,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _vision: {fileID: 6366743230350159477}
   _movement: {fileID: 6255880666549961534}
-  _attackController: {fileID: 8381352787917874237}
+  _weaponController: {fileID: 8381352787917874237}
   _health: {fileID: 3881613647583155280}
 --- !u!114 &6366743230350159477
 MonoBehaviour:
@@ -524,7 +524,7 @@ MonoBehaviour:
   _fov: 120
   _visionMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1472
 --- !u!114 &6255880666549961534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -557,7 +557,7 @@ MonoBehaviour:
   _aimingTarget: {fileID: 4744811873221415730}
   _weapon: {fileID: 3588984380859971135}
   _attackDistance: 6
-  _aimingTargetSpeed: 5
+  _aimingSpeed: 5
 --- !u!114 &3881613647583155280
 MonoBehaviour:
   m_ObjectHideFlags: 0

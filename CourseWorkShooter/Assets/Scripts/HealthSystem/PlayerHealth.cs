@@ -39,7 +39,7 @@ namespace HealthSystem
 
             if (_currentHealth <= 0)
             {
-                GameManager.Instance.EndGame();
+                EventManager.OnGameEnd.Invoke();
                 return;
             }
 

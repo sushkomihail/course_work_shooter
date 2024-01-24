@@ -1,15 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Extensions;
-using InputSystem;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using PlayerInput = InputSystem.PlayerInput;
 
 namespace WeaponSystem
 {
     public class WeaponSwitcher
     {
-        private readonly PlayerInputSystem _input;
+        private readonly PlayerInput _input;
         private readonly Weapon[] _weapons;
         private readonly float _switchTime;
         private readonly Vector3 _switchOffset;
@@ -19,8 +19,9 @@ namespace WeaponSystem
 
         public bool IsSwitching { get; private set; }
         public Weapon CurrentWeapon { get; private set; }
+        private bool _isPaused => GameManager.Instance.PauseManager.IsPaused;
 
-        public WeaponSwitcher(PlayerInputSystem input, Weapon[] weapons, float switchTime, Vector3 switchOffset)
+        public WeaponSwitcher(PlayerInput input, Weapon[] weapons, float switchTime, Vector3 switchOffset)
         {
             _input = input;
             _weapons = weapons;
@@ -36,23 +37,36 @@ namespace WeaponSystem
             IsSwitching = true;
             
             CurrentWeapon.gameObject.SetActive(false);
-
+            
             if (key == "y") UpdateWeaponIndexByMouseScroll();
             else _currentWeaponIndex = (int)_keyCodes[key];
             
             CurrentWeapon = _weapons[_currentWeaponIndex];
             
+            Vector3 defaultPosition = CurrentWeapon.transform.localPosition;
+            
             CurrentWeapon.transform.localPosition += _switchOffset;
             CurrentWeapon.gameObject.SetActive(true);
             
             Vector3 currentOffset = _switchOffset;
+            Vector3 currentPosition = CurrentWeapon.transform.localPosition;
             float elapsedTime = 0;
-
+            
             while (elapsedTime < _switchTime)
             {
                 float lerpFraction = elapsedTime / _switchTime;
-                currentOffset = Vector3.Lerp(currentOffset, Vector3.zero, lerpFraction);
-                CurrentWeapon.transform.localPosition += currentOffset;
+
+                if (_isPaused)
+                {
+                    currentPosition = Vector3.Lerp(currentPosition, defaultPosition, lerpFraction);
+                    CurrentWeapon.transform.localPosition = currentPosition;
+                }
+                else
+                {
+                    currentOffset = Vector3.Lerp(currentOffset, Vector3.zero, lerpFraction);
+                    CurrentWeapon.transform.localPosition += currentOffset;
+                }
+                
                 elapsedTime += Time.deltaTime;
                 yield return null;
             }

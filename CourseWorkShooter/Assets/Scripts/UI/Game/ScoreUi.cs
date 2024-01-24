@@ -8,30 +8,29 @@ namespace UI.Game
         private readonly TextMeshProUGUI _text;
         private readonly Animation _animation;
 
-        private int _score;
+        public int Score { get; private set; }
         
         public ScoreUi(TextMeshProUGUI text, Animation animation)
         {
             _text = text;
             _animation = animation;
             
-            _score = 0;
-            _text.text = _score.ToString();
+            Score = 0;
+            _text.text = Score.ToString();
         }
 
         public void Update()
         {
             if (_text == null) return;
             
-            _score += 1;
-            _text.text = _score.ToString();
+            Score += 1;
+            _text.text = Score.ToString();
 
             if (_animation == null) return;
             
             if (_animation.isPlaying)
             {
                 _animation.Stop();
-                _animation.Rewind();
             }
             
             _animation.Play();

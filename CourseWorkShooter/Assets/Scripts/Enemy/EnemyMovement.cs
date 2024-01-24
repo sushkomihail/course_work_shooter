@@ -1,10 +1,10 @@
-﻿using Chest;
+﻿using PauseSystem;
 using UnityEngine;
 using UnityEngine.AI;
 
 namespace Enemy
 {
-    public class EnemyMovement : MonoBehaviour
+    public class EnemyMovement : MonoBehaviour, IPauseHandler
     {
         [SerializeField] private Animator _animator;
         [SerializeField] private float _transitionalValue = 0.5f;
@@ -17,7 +17,7 @@ namespace Enemy
         public void Initialize(float stoppingDistance)
         {
             _isWalkingHash = Animator.StringToHash("IsWalking");
-            
+
             _agent.speed = _moveSpeed;
             _agent.stoppingDistance = stoppingDistance;
         }
@@ -25,8 +25,19 @@ namespace Enemy
         public void Move(Transform target)
         {
             RotateToTarget(target);
-            _agent.SetDestination(target.position);
+
+            if (_agent.enabled)
+            {
+                _agent.SetDestination(target.position);
+            }
+            
             _animator.SetBool(_isWalkingHash, _agent.velocity.magnitude > _transitionalValue);
+        }
+        
+        public void OnPause(bool isPaused)
+        {
+            if (_agent != null) _agent.enabled = !isPaused;
+            if (_animator != null) _animator.SetBool(_isWalkingHash, !isPaused);
         }
 
         private void RotateToTarget(Transform target)

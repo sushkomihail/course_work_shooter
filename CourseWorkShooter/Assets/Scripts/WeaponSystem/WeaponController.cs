@@ -1,7 +1,8 @@
 using Extensions;
-using InputSystem;
 using Player;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using PlayerInput = InputSystem.PlayerInput;
 
 namespace WeaponSystem
 {
@@ -9,38 +10,53 @@ namespace WeaponSystem
     {
         [SerializeField] private Transform _cameraTransform;
         [SerializeField] private float _switchSpeed = 1;
-        [SerializeField] private Vector3 _switchOffset = new Vector3(0, 0.2f, 0);
+        [SerializeField] private Vector3 _switchOffset = new Vector3(0, -0.2f, 0);
 
         private Weapon[] _playerWeapons;
+        private WeaponSwitcher _switcher;
         private bool _isFireButtonPressed;
 
-        public WeaponSwitcher Switcher { get; private set; }
+        private bool _isPaused => GameManager.Instance.PauseManager.IsPaused;
 
-        public void Initialize(PlayerInputSystem input, IRecoilControlAngles recoilControlAngles)
+        public void Initialize(PlayerInput input, IRecoilControlAngles recoilControlAngles)
         {
             PlayerController.OnShoot.AddListener(() => _isFireButtonPressed = true);
             PlayerController.OnShootEnd.AddListener(() => _isFireButtonPressed = false);
             
             InstantiateWeapons(recoilControlAngles);
-            Switcher = new WeaponSwitcher(input, _playerWeapons, _switchSpeed, _switchOffset);
+            _switcher = new WeaponSwitcher(input, _playerWeapons, _switchSpeed, _switchOffset);
         }
 
         public void Control(MovementStates currentMovementState, Vector2 lookInputVector)
         {
-            if (_isFireButtonPressed && Switcher.CurrentWeapon.IsReadyToShoot)
+            if (_isFireButtonPressed && _switcher.CurrentWeapon.IsReadyToShoot)
             {
-                StartCoroutine(Switcher.CurrentWeapon.Shoot());
-                Switcher.CurrentWeapon.Recoil.SetUp();
+                StartCoroutine(_switcher.CurrentWeapon.Shoot());
+                _switcher.CurrentWeapon.Recoil.SetUp();
 
-                if (!Switcher.CurrentWeapon.CanHold)
+                if (!_switcher.CurrentWeapon.CanHold)
                 {
                     _isFireButtonPressed = false;
                 }
             }
             
-            Switcher.CurrentWeapon.Recoil.Perform();
-            Switcher.CurrentWeapon.Bobbing.Perform(currentMovementState);
-            Switcher.CurrentWeapon.Sway.Perform(lookInputVector);
+            _switcher.CurrentWeapon.Recoil.Perform();
+            _switcher.CurrentWeapon.Bobbing.Perform(currentMovementState);
+            _switcher.CurrentWeapon.Sway.Perform(lookInputVector);
+        }
+        
+        public void SwitchWeapon(InputAction.CallbackContext context)
+        {
+            if (_switcher.IsSwitching || _isPaused) return;
+            
+            string key = context.control.name;
+
+            if (key == "y")
+            {
+                _switcher.UpdateMouseScroll(context.ReadValue<float>());
+            }
+            
+            StartCoroutine(_switcher.Switch(key));
         }
 
         private void InstantiateWeapons(IRecoilControlAngles recoilControlAngles)

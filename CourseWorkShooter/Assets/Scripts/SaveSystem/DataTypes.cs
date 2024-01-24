@@ -3,6 +3,7 @@
     public enum DataTypes
     {
         Control,
-        Sound
+        Sound,
+        Stats
     }
 }

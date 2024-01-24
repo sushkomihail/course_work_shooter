@@ -1,15 +1,14 @@
 using HealthSystem;
-using InputSystem;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.InputSystem;
 using WeaponSystem;
+using PlayerInput = InputSystem.PlayerInput;
 
 namespace Player
 {
     public class PlayerController : MonoBehaviour
     {
-        [SerializeField] private PlayerInputSystem _input;
+        [SerializeField] private PlayerInput _input;
         [SerializeField] private PlayerCamera _camera;
         [SerializeField] private PlayerMovement _movement;
         [SerializeField] private WeaponController _weaponController;
@@ -18,15 +17,11 @@ namespace Player
         public static readonly UnityEvent OnShoot = new UnityEvent();
         public static readonly UnityEvent OnShootEnd = new UnityEvent();
         
-        private Vector2 _currentMoveInputVector;
-
         public PlayerCamera Camera => _camera;
+        private bool _isPaused => GameManager.Instance.PauseManager.IsPaused;
 
         private void Awake()
         {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-            
             _input.Initialize();
             _camera.Initialize();
             _movement.Initialize();
@@ -42,43 +37,31 @@ namespace Player
             _input.Controls.Player.Jump.performed += _ => _movement.HandleState(MovementStates.Jump);
             _input.Controls.Player.Crouch.performed += _ => _movement.HandleState(MovementStates.Crouch);
 
-            _input.Controls.Player.SwitchWeapon.performed += PerformWeaponSwitching;
+            _input.Controls.Player.SwitchWeapon.performed += _weaponController.SwitchWeapon;
             _input.Controls.Player.Shoot.started += _ => OnShoot?.Invoke();
             _input.Controls.Player.Shoot.canceled += _ => OnShootEnd?.Invoke();
         }
 
         private void OnEnable()
         {
-            _input.OnActivate();
+            _input.Enable();
         }
 
         private void OnDisable()
         {
-            _input.OnDisactivate();
+            _input.Disable();
         }
 
         private void Update()
         {
+            if (_isPaused) return;
+            
             Vector2 lookInputVector = _input.Controls.Player.Look.ReadValue<Vector2>();
             Vector2 moveInputVector = _input.Controls.Player.Move.ReadValue<Vector2>();
             
             _camera.Look(lookInputVector);
             _movement.Move(moveInputVector);
             _weaponController.Control(_movement.CurrentState, lookInputVector);
-        }
-
-        private void PerformWeaponSwitching(InputAction.CallbackContext context)
-        {
-            if (_weaponController.Switcher.IsSwitching) return;
-            
-            string key = context.control.name;
-
-            if (key == "y")
-            {
-                _weaponController.Switcher.UpdateMouseScroll(context.ReadValue<float>());
-            }
-                    
-            StartCoroutine(_weaponController.Switcher.Switch(key));
         }
     }
 }

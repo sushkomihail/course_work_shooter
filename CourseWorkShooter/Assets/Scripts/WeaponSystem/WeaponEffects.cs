@@ -27,7 +27,7 @@ namespace WeaponSystem
 
             if (soundData != null)
             {
-                _shootAudioSource.volume *= soundData.EffectsVolume;
+                _shootAudioSource.volume = soundData.EffectsVolume;
             }
         }
 

@@ -30,13 +30,13 @@ namespace SpawnSystem
         {
             if (_spawnPoints == null || _spawnPoints.Count == 0) yield break; 
             
-            List<Transform> remainingPoints = new List<Transform>(_spawnPoints);
             int needToSpawnCount = _currentSpawnEnemiesCount;
 
             while (needToSpawnCount != 0)
             {
                 yield return new WaitForSeconds(_spawnDelay);
-
+                
+                List<Transform> remainingPoints = new List<Transform>(_spawnPoints);
                 int spawnsCount = GetSpawnsCountInCycle(ref needToSpawnCount);
 
                 for (int j = 0; j < spawnsCount; j++)

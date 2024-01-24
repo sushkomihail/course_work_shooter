@@ -34,7 +34,6 @@
           <e p="UI" t="Include" />
           <e p="Weapons" t="Include" />
         </e>
-        <e p="README.txt" t="Include" />
         <e p="Scenes" t="Include">
           <e p="Game" t="Include" />
         </e>
@@ -55,10 +54,10 @@
             <e p="EnemiesCollection.cs" t="Include" />
           </e>
           <e p="Enemy" t="Include">
-            <e p="EnemyAttackController.cs" t="Include" />
             <e p="EnemyController.cs" t="Include" />
             <e p="EnemyMovement.cs" t="Include" />
             <e p="EnemyVision.cs" t="Include" />
+            <e p="EnemyWeaponController.cs" t="Include" />
           </e>
           <e p="EventManager.cs" t="Include" />
           <e p="Extensions" t="Include">
@@ -78,9 +77,17 @@
             <e p="ImpactsCollectionItem.cs" t="Include" />
           </e>
           <e p="InputSystem" t="Include">
+            <e p="Controls.cs" t="Include" />
             <e p="InputSystem.cs" t="Include" />
-            <e p="PlayerControls.cs" t="Include" />
-            <e p="PlayerInputSystem.cs" t="Include" />
+            <e p="PlayerInput.cs" t="Include" />
+            <e p="UiInput.cs" t="Include" />
+          </e>
+          <e p="Music" t="Include">
+            <e p="MusicManager.cs" t="Include" />
+          </e>
+          <e p="PauseSystem" t="Include">
+            <e p="IPauseHandler.cs" t="Include" />
+            <e p="PauseManager.cs" t="Include" />
           </e>
           <e p="Player" t="Include">
             <e p="IRecoilControlAngles.cs" t="Include" />
@@ -96,6 +103,7 @@
               <e p="ControlData.cs" t="Include" />
               <e p="SoundData.cs" t="Include" />
             </e>
+            <e p="StatsData.cs" t="Include" />
           </e>
           <e p="SceneLoadingSystem" t="Include">
             <e p="CallbackController.cs" t="Include" />
@@ -111,8 +119,11 @@
               <e p="ChestUi.cs" t="Include" />
               <e p="EnemyUi.cs" t="Include" />
               <e p="GameUi.cs" t="Include" />
+              <e p="PauseUi.cs" t="Include" />
               <e p="PlayerUi.cs" t="Include" />
+              <e p="ResultsUi.cs" t="Include" />
               <e p="ScoreUi.cs" t="Include" />
+              <e p="TimerUi.cs" t="Include" />
             </e>
             <e p="ScrollView.cs" t="Include" />
             <e p="ScrollViewItemsCollection.cs" t="Include" />
@@ -122,8 +133,10 @@
               <e p="SettingsLoader.cs" t="Include" />
               <e p="SoundSettings.cs" t="Include" />
             </e>
+            <e p="Stats.cs" t="Include" />
             <e p="Transitions" t="Include">
               <e p="PlayButton.cs" t="Include" />
+              <e p="ResumeButton.cs" t="Include" />
               <e p="SceneTransition.cs" t="Include" />
               <e p="Transition.cs" t="Include" />
               <e p="WindowTransition.cs" t="Include" />
@@ -148,8 +161,7 @@
           <e p="CartoonShader.shader" t="Include" />
         </e>
         <e p="Sounds" t="Include">
-          <e p="Bullets" t="Include" />
-          <e p="Impacts" t="Include" />
+          <e p="Music" t="Include" />
           <e p="Weapon" t="Include" />
         </e>
         <e p="Sprites" t="Include">

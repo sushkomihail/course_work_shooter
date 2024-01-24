@@ -1,7 +1,7 @@
 ﻿using Player;
 using UnityEngine;
 
-namespace UI
+namespace UI.Game
 {
     public class Billboard : MonoBehaviour
     {
