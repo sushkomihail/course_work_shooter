@@ -26,52 +26,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="964bf02c-bc4c-47dd-b461-5432e5d36519" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CourseWorkShooter/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CourseWorkShooter/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CourseWorkShooter/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CourseWorkShooter/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CourseWorkShooter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CourseWorkShooter/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Effects/M_BurnMark.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Effects/M_BurnMark.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Effects/M_Concrete_Debris.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Effects/M_Concrete_Debris.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Effects/M_Impact_Concrete.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Effects/M_Impact_Concrete.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Effects/M_Shockwave.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Effects/M_Shockwave.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Enviroment/M_Sand.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Enviroment/M_Sand.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/M_Chest.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/M_Chest.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/PlaneMaterial.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/PlaneMaterial.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/PlayerMaterial.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/PlayerMaterial.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/TrailMaterial.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/TrailMaterial.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/Fish.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/Fish.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BuffSystem/ArmorBuff.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BuffSystem/ArmorBuff.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Collections.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Collections/EnemiesCollection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemiesCollection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Collections/EnemiesCollection.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemiesCollection.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HealthSystem/EnemyHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HealthSystem/EnemyHealth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/IRecoilControlAngles.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/IRecoilControlAngles.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/IRecoilControlAngles.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/IRecoilControlAngles.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerCamera.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneLoadingSystem/CallbackController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneLoadingSystem/LoadingCallbackController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneLoadingSystem/CallbackController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneLoadingSystem/LoadingCallbackController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SpawnSystem/SpawnController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SpawnSystem/SpawnController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Settings/ControlSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Settings/ControlSettings.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Settings/SettingsLoader.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Settings/SettingsLoader.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Settings/SoundSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Settings/SoundSettings.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/AssaultRifle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/AssaultRifle.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Weapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerWeaponController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/WeaponController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerWeaponController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,12 +93,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneLoadingSystem/LoadingCallbackController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Settings/SoundSettings.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Settings/ControlSettings.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Weapon.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/AssaultRifle.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/ExitButton.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpawnSystem/SpawnController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/HealthSystem/EnemyHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BuffSystem/ArmorBuff.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WeaponSystem/Weapon.cs" />
       </list>
     </option>
   </component>
@@ -263,6 +219,7 @@
       <workItem from="1706095432939" duration="10364000" />
       <workItem from="1706107617909" duration="592000" />
       <workItem from="1706178355071" duration="12455000" />
+      <workItem from="1706192753825" duration="179000" />
     </task>
     <servers />
   </component>

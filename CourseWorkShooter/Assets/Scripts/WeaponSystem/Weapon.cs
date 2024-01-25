@@ -42,6 +42,7 @@ namespace WeaponSystem
         public virtual void Initialize()
         {
             IsReadyToShoot = true;
+            _effects.Initialize();
         }
 
         public abstract IEnumerator Shoot();
