@@ -11,7 +11,7 @@ namespace Player
         [SerializeField] private PlayerInput _input;
         [SerializeField] private PlayerCamera _camera;
         [SerializeField] private PlayerMovement _movement;
-        [SerializeField] private WeaponController _weaponController;
+        [SerializeField] private PlayerWeaponController _weaponController;
         [SerializeField] private PlayerHealth _health;
 
         public static readonly UnityEvent OnShoot = new UnityEvent();

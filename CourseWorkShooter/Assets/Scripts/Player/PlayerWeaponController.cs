@@ -1,12 +1,12 @@
 using Extensions;
-using Player;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using WeaponSystem;
 using PlayerInput = InputSystem.PlayerInput;
 
-namespace WeaponSystem
+namespace Player
 {
-    public class WeaponController : MonoBehaviour
+    public class PlayerWeaponController : MonoBehaviour
     {
         [SerializeField] private Transform _cameraTransform;
         [SerializeField] private float _switchSpeed = 1;

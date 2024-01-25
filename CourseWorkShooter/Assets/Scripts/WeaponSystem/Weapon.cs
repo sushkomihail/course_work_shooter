@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using AttackSystem;
-using Player;
 using UnityEngine;
 
 namespace WeaponSystem

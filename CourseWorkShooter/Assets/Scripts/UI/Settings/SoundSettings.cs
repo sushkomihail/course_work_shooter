@@ -1,4 +1,6 @@
-﻿using SaveSystem.Settings;
+﻿using System;
+using SaveSystem;
+using SaveSystem.Settings;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,8 +16,15 @@ namespace UI.Settings
             _effectsVolumeSlider.value
         );
 
-        public void Initialize(SoundData soundData)
+        private void OnEnable()
         {
+            Initialize();
+        }
+
+        private void Initialize()
+        {
+            SoundData soundData = Saver<SoundData>.Load(DataTypes.Sound);
+            
             if (soundData == null) return;
             
             _musicVolumeSlider.value = soundData.MusicVolume;

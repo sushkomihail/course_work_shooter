@@ -1,4 +1,5 @@
-﻿using SaveSystem.Settings;
+﻿using SaveSystem;
+using SaveSystem.Settings;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,8 +15,15 @@ namespace UI.Settings
             _horizontalSensitivitySlider.value
             );
 
-        public void Initialize(ControlData controlData)
+        private void OnEnable()
         {
+            Initialize();
+        }
+
+        private void Initialize()
+        {
+            ControlData controlData = Saver<ControlData>.Load(DataTypes.Control);
+            
             if (controlData == null) return;
             
             _verticalSensitivitySlider.value = controlData.VerticalSensitivity;

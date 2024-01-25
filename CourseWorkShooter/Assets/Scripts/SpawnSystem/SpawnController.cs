@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using Collections;
+using Enemy;
 using UnityEngine;
 
 namespace SpawnSystem
@@ -68,7 +68,7 @@ namespace SpawnSystem
         private void OnEnemyDeath()
         {
             _enemiesOnSceneCount -= 1;
-            
+
             if (_enemiesOnSceneCount == 0)
             {
                 StartCoroutine(SpawnWave());

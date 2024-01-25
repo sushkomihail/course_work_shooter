@@ -2,7 +2,7 @@
 
 namespace SceneLoadingSystem
 {
-    public class CallbackController : MonoBehaviour
+    public class LoadingCallbackController : MonoBehaviour
     {
         private bool _isFirstUpdate = true;
 

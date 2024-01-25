@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Player
+namespace WeaponSystem
 {
     public interface IRecoilControlAngles
     {

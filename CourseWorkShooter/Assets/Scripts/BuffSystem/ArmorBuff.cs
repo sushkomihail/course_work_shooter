@@ -10,6 +10,7 @@ namespace BuffSystem
             if (other.TryGetComponent(out PlayerHealth playerHealth))
             {
                 playerHealth.RepairArmor(_buffValue);
+                Destroy(gameObject);
             }
         }
     }

@@ -50,10 +50,8 @@
             <e p="ChestController.cs" t="Include" />
             <e p="ChestShaker.cs" t="Include" />
           </e>
-          <e p="Collections" t="Include">
-            <e p="EnemiesCollection.cs" t="Include" />
-          </e>
           <e p="Enemy" t="Include">
+            <e p="EnemiesCollection.cs" t="Include" />
             <e p="EnemyController.cs" t="Include" />
             <e p="EnemyMovement.cs" t="Include" />
             <e p="EnemyVision.cs" t="Include" />
@@ -90,11 +88,11 @@
             <e p="PauseManager.cs" t="Include" />
           </e>
           <e p="Player" t="Include">
-            <e p="IRecoilControlAngles.cs" t="Include" />
             <e p="MovementStates.cs" t="Include" />
             <e p="PlayerCamera.cs" t="Include" />
             <e p="PlayerController.cs" t="Include" />
             <e p="PlayerMovement.cs" t="Include" />
+            <e p="PlayerWeaponController.cs" t="Include" />
           </e>
           <e p="SaveSystem" t="Include">
             <e p="DataTypes.cs" t="Include" />
@@ -106,7 +104,7 @@
             <e p="StatsData.cs" t="Include" />
           </e>
           <e p="SceneLoadingSystem" t="Include">
-            <e p="CallbackController.cs" t="Include" />
+            <e p="LoadingCallbackController.cs" t="Include" />
             <e p="SceneLoader.cs" t="Include" />
             <e p="Scenes.cs" t="Include" />
           </e>
@@ -114,6 +112,7 @@
             <e p="SpawnController.cs" t="Include" />
           </e>
           <e p="UI" t="Include">
+            <e p="ExitButton.cs" t="Include" />
             <e p="Game" t="Include">
               <e p="Billboard.cs" t="Include" />
               <e p="ChestUi.cs" t="Include" />
@@ -130,7 +129,6 @@
             <e p="Settings" t="Include">
               <e p="ControlSettings.cs" t="Include" />
               <e p="SaveButton.cs" t="Include" />
-              <e p="SettingsLoader.cs" t="Include" />
               <e p="SoundSettings.cs" t="Include" />
             </e>
             <e p="Stats.cs" t="Include" />
@@ -145,11 +143,11 @@
           </e>
           <e p="WeaponSystem" t="Include">
             <e p="AssaultRifle.cs" t="Include" />
+            <e p="IRecoilControlAngles.cs" t="Include" />
             <e p="Shotgun.cs" t="Include" />
             <e p="Trail.cs" t="Include" />
             <e p="Weapon.cs" t="Include" />
             <e p="WeaponBobbing.cs" t="Include" />
-            <e p="WeaponController.cs" t="Include" />
             <e p="WeaponEffects.cs" t="Include" />
             <e p="WeaponRecoil.cs" t="Include" />
             <e p="WeaponsProvider.cs" t="Include" />
